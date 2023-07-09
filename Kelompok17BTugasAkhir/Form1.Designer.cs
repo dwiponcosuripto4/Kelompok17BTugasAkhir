@@ -38,27 +38,32 @@ namespace Kelompok17BTugasAkhir
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(166, 127);
+            this.button1.Location = new System.Drawing.Point(111, 83);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 35);
+            this.button1.Size = new System.Drawing.Size(76, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Pemilik_Kos";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(166, 168);
+            this.button2.Location = new System.Drawing.Point(111, 109);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 32);
+            this.button2.Size = new System.Drawing.Size(76, 21);
             this.button2.TabIndex = 1;
             this.button2.Text = "Kos_Kosan";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(166, 206);
+            this.button3.Location = new System.Drawing.Point(111, 134);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 34);
+            this.button3.Size = new System.Drawing.Size(76, 22);
             this.button3.TabIndex = 2;
             this.button3.Text = "Kamar";
             this.button3.UseVisualStyleBackColor = true;
@@ -66,34 +71,38 @@ namespace Kelompok17BTugasAkhir
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(166, 246);
+            this.button4.Location = new System.Drawing.Point(111, 160);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 32);
+            this.button4.Size = new System.Drawing.Size(76, 21);
             this.button4.TabIndex = 3;
             this.button4.Text = "Penyewa";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(166, 284);
+            this.button5.Location = new System.Drawing.Point(111, 185);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 28);
+            this.button5.Size = new System.Drawing.Size(76, 18);
             this.button5.TabIndex = 4;
             this.button5.Text = "Admin";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Halaman Utama";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
