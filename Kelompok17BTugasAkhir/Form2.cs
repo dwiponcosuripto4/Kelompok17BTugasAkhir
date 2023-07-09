@@ -16,5 +16,10 @@ namespace Kelompok17BTugasAkhir
         {
             InitializeComponent();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
