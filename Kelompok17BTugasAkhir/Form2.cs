@@ -15,6 +15,7 @@ namespace Kelompok17BTugasAkhir
     {
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
+        private string idpm, namapm, alamat, nohp;
         BindingSource customerBindingSource = new BindingSource();
         public FormPemilikKos()
         {
@@ -89,6 +90,28 @@ namespace Kelompok17BTugasAkhir
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             btnAdd.Enabled = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            idpm = txtIdPemilik.Text;
+            namapm = txtNamaPemilik.Text;
+            alamat = txtAlamat.Text;
+            nohp = txtNoHp.Text;
+            string str = "insert into dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp)" + "values(@idpm, @nmpm, @Al, @nohp)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("idpm", idpm));
+            cmd.Parameters.Add(new SqlParameter("nmpm", namapm));
+            cmd.Parameters.Add(new SqlParameter("AL", alamat));
+            cmd.Parameters.Add(new SqlParameter("nohp", nohp));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            refreshform();
         }
     }
 }
