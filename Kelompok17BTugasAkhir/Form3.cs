@@ -16,9 +16,11 @@ namespace Kelompok17BTugasAkhir
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
         BindingSource customerBindingSource = new BindingSource();
+        private string idkk, namakos, alamat, nohp, kapsk, hs;
         public KosKosan()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
         }
 
         private void button4_Click(object sender, EventArgs e)
