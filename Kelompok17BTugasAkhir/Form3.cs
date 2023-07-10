@@ -23,6 +23,25 @@ namespace Kelompok17BTugasAkhir
             koneksi = new SqlConnection(stringConnection);
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            textidkk.Text = "";
+            textNK.Text = "";
+            textAlamat.Text = "";
+            textNoHp.Text = "";
+            textKK.Text = "";
+            textHS.Text = "";
+            textidkk.Enabled = true;
+            textNK.Enabled = true;
+            textAlamat.Enabled = true;
+            textNoHp.Enabled = true;
+            textKK.Enabled = true;
+            textHS.Enabled = true;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
+        }
+
         private void FormPemilikKos_Load()
         {
             koneksi.Open();
