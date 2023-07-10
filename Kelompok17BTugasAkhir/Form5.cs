@@ -17,9 +17,12 @@ namespace Kelompok17BTugasAkhir
         private SqlConnection koneksi;
         private string idp, np, alamat, NoHp ;
         BindingSource customerBindingSource = new BindingSource();
+
         public FormPenyewa()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
+            this.bnpenyewa.BindingSource = this.customerBindingSource;
         }
 
         private void button4_Click(object sender, EventArgs e)
