@@ -66,5 +66,19 @@ namespace Kelompok17BTugasAkhir
             this.textKK.DataBindings.Clear();
             this.textHS.DataBindings.Clear();
         }
+        private void refreshform()
+        {
+            textidkk.Enabled = false;
+            textNK.Enabled = false;
+            textAlamat.Enabled = false;
+            textNoHp.Enabled = false;
+            textKK.Enabled = false;
+            textHS.Enabled = false;
+            btnAdd.Enabled = true;
+            btnSave.Enabled = false;
+            btnClear.Enabled = false;
+            clearBinding();
+            FormPemilikKos_Load();
+        }
     }
 }
