@@ -24,6 +24,7 @@ namespace Kelompok17BTugasAkhir
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
             this.bnpenyewa.BindingSource = this.customerBindingSource;
+            refreshform();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -62,6 +63,11 @@ namespace Kelompok17BTugasAkhir
             MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshform();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -90,6 +96,27 @@ namespace Kelompok17BTugasAkhir
             this.textNoHp.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "no_hp", true));
             koneksi.Close();
+        }
+
+        private void clearBinding()
+        {
+            this.textidp.DataBindings.Clear();
+            this.textnp.DataBindings.Clear();
+            this.textalamat.DataBindings.Clear();
+            this.textNoHp.DataBindings.Clear();
+        }
+
+        private void refreshform()
+        {
+            textidp.Enabled = false;
+            textnp.Enabled = false;
+            textalamat.Enabled = false;
+            textNoHp.Enabled = false;
+            btnAdd.Enabled = true;
+            btnSave.Enabled = false;
+            btnClear.Enabled = false;
+            clearBinding();
+            FormPenyewa_Load();
         }
     }
 }

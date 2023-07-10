@@ -152,6 +152,7 @@
             this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Hapus";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // button4
             // 
