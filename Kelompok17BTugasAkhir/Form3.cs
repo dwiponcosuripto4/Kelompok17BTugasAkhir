@@ -42,6 +42,33 @@ namespace Kelompok17BTugasAkhir
             btnAdd.Enabled = false;
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            idkk = textidkk.Text;
+            namakos = textNK.Text;
+            alamat = textAlamat.Text;
+            nohp = textNoHp.Text;
+            kapsk = textKK.Text;
+            hs = textHS.Text;
+            koneksi.Open();
+            string str = "insert into dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp)" + "values(@idpm, @nmpm, @Al, @nohp)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("idk", idkk));
+            cmd.Parameters.Add(new SqlParameter("nk", namakos));
+            cmd.Parameters.Add(new SqlParameter("Al", alamat));
+            cmd.Parameters.Add(new SqlParameter("nohp", nohp));
+            cmd.Parameters.Add(new SqlParameter("kaps", kapsk));
+            cmd.Parameters.Add(new SqlParameter("hrs", hs));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            refreshform();
+        }
+
         private void FormPemilikKos_Load()
         {
             koneksi.Open();
