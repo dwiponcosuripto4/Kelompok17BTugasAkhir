@@ -21,6 +21,8 @@ namespace Kelompok17BTugasAkhir
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
+            this.bnPemilik.BindingSource = this.customerBindingSource;
+            refreshform();
         }
         private void FormPemilikKos_Load()
         {
@@ -72,9 +74,14 @@ namespace Kelompok17BTugasAkhir
             this.Close();
         }
 
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
-           
+            refreshform();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -98,6 +105,7 @@ namespace Kelompok17BTugasAkhir
             namapm = txtNamaPemilik.Text;
             alamat = txtAlamat.Text;
             nohp = txtNoHp.Text;
+            koneksi.Open();
             string str = "insert into dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp)" + "values(@idpm, @nmpm, @Al, @nohp)";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             cmd.CommandType = CommandType.Text;
@@ -115,3 +123,5 @@ namespace Kelompok17BTugasAkhir
         }
     }
 }
+
+
