@@ -48,7 +48,7 @@ namespace Kelompok17BTugasAkhir
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Kelompok17BTugasAkhir.Form6 formPanggil = new Kelompok17BTugasAkhir.Form6();
+            Kelompok17BTugasAkhir.admin formPanggil = new Kelompok17BTugasAkhir.admin();
             formPanggil.Show();
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,13 @@ using System.Windows.Forms;
 
 namespace Kelompok17BTugasAkhir
 {
-    public partial class Form6 : Form
+    public partial class admin : Form
     {
-        public Form6()
+        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
+        private SqlConnection koneksi;
+        private string idka, idko, nohp, usern, pssw;
+        BindingSource customerBindingSource = new BindingSource();
+        public admin()
         {
             InitializeComponent();
         }
