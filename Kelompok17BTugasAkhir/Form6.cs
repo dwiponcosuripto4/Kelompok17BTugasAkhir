@@ -29,6 +29,28 @@ namespace Kelompok17BTugasAkhir
 
         }
 
+        private void admin_Load()
+        {
+            koneksi.Open();
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_kos, m.nama_kos, "
+            + "m.alamat, m.no_hp, kapasitas, harga From dbo.Kos m ", koneksi));
+            DataSet ds = new DataSet();
+            dataAdapter1.Fill(ds);
+
+            this.customerBindingSource.DataSource = ds.Tables[0];
+            this.textidka.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "id_koskosan", true));
+            this.textidko.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "nama_kos", true));
+            this.textnohp.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "alamat", true));
+            this.textuser.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "no_hp", true));
+            this.textpsw.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "kapasitas_kamar", true));
+            koneksi.Close();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
