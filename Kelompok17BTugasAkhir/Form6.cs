@@ -36,6 +36,29 @@ namespace Kelompok17BTugasAkhir
             btnAdd.Enabled = false;
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            idka = textidka.Text;
+            idko = textidko.Text;
+            nohp = textnohp.Text;
+            usern = textuser.Text;
+            pssw = textpsw.Text;
+            koneksi.Open();
+            string str = "insert into dbo.Kos (id_kos, nama_kos, alamat, no_hp, kapasitas, harga)" + "values(@idk, @nk, @Al, @nohp, @kaps, @hrs)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("idka", idka));
+            cmd.Parameters.Add(new SqlParameter("idko", idko));
+            cmd.Parameters.Add(new SqlParameter("nohp", nohp));
+            cmd.Parameters.Add(new SqlParameter("user", usern));
+            cmd.Parameters.Add(new SqlParameter("psw", pssw));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public admin()
         {
             InitializeComponent();
