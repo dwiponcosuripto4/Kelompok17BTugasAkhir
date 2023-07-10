@@ -78,7 +78,17 @@ namespace Kelompok17BTugasAkhir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            txtIdPemilik.Text = "";
+            txtNamaPemilik.Text = "";
+            txtAlamat.Text = "";
+            txtNoHp.Text = "";
+            txtIdPemilik.Enabled = true;
+            txtNamaPemilik.Enabled = true;
+            txtAlamat.Enabled = true;
+            txtNoHp.Enabled = true;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
         }
     }
 }
