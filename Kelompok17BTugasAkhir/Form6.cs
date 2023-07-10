@@ -97,5 +97,14 @@ namespace Kelompok17BTugasAkhir
         {
             this.Close();
         }
+
+        private void clearBinding()
+        {
+            this.textidka.DataBindings.Clear();
+            this.textidko.DataBindings.Clear();
+            this.textnohp.DataBindings.Clear();
+            this.textuser.DataBindings.Clear();
+            this.textpsw.DataBindings.Clear();
+        }
     }
 }
