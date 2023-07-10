@@ -57,6 +57,7 @@ namespace Kelompok17BTugasAkhir
             koneksi.Close();
 
             MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            refreshform();
         }
 
         public admin()
@@ -64,11 +65,17 @@ namespace Kelompok17BTugasAkhir
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
             this.bnadmin.BindingSource = this.customerBindingSource;
+            refreshform();
         }
 
         private void Form6_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshform();
         }
 
         private void admin_Load()
