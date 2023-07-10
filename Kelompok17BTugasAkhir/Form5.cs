@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Kelompok17BTugasAkhir
 {
@@ -38,6 +39,27 @@ namespace Kelompok17BTugasAkhir
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             btnAdd.Enabled = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            idp = textidp.Text;
+            np = textnp.Text;
+            alamat = textalamat.Text;
+            NoHp = textNoHp.Text;
+            koneksi.Open();
+            string str = "insert into dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp)" + "values(@idpm, @nmpm, @Al, @nohp)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("idp", idp));
+            cmd.Parameters.Add(new SqlParameter("np", np));
+            cmd.Parameters.Add(new SqlParameter("Al", alamat));
+            cmd.Parameters.Add(new SqlParameter("nohp", NoHp));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button4_Click(object sender, EventArgs e)
