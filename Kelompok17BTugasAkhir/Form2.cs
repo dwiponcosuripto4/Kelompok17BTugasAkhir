@@ -42,6 +42,15 @@ namespace Kelompok17BTugasAkhir
             koneksi.Close();
         }
 
+        private void clearBinding()
+        {
+            this.txtIdPemilik.DataBindings.Clear();
+            this.txtNamaPemilik.DataBindings.Clear();
+            this.txtAlamat.DataBindings.Clear();
+            this.txtAlamat.DataBindings.Clear();
+            this.txtNoHp.DataBindings.Clear();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
