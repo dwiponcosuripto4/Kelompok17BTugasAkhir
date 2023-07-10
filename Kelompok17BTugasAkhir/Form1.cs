@@ -30,7 +30,7 @@ namespace Kelompok17BTugasAkhir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Kelompok17BTugasAkhir.Form2 formPanggil = new Kelompok17BTugasAkhir.Form2();
+            Kelompok17BTugasAkhir.FormPemilikKos formPanggil = new Kelompok17BTugasAkhir.FormPemilikKos();
             formPanggil.Show();
         }
 

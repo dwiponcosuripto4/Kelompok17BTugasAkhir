@@ -11,18 +11,17 @@ using System.Windows.Forms;
 
 namespace Kelompok17BTugasAkhir
 {
-    public partial class Form2 : Form
+    public partial class FormPemilikKos : Form
     {
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
         BindingSource customerBindingSource = new BindingSource();
-        public Form2()
+        public FormPemilikKos()
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
         }
-
-        private void Form2_Load(object sender, EventArgs e)
+        private void FormPemilikKos_Load()
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_pemilik, m.nama_pemilik, "
@@ -41,14 +40,30 @@ namespace Kelompok17BTugasAkhir
                 new Binding("Text", this.customerBindingSource, "no_hp", true));
             koneksi.Close();
         }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            
+        }
 
         private void clearBinding()
         {
             this.txtIdPemilik.DataBindings.Clear();
             this.txtNamaPemilik.DataBindings.Clear();
             this.txtAlamat.DataBindings.Clear();
-            this.txtAlamat.DataBindings.Clear();
             this.txtNoHp.DataBindings.Clear();
+        }
+
+        private void refreshform()
+        {
+            txtIdPemilik.Enabled = false;
+            txtNamaPemilik.Enabled = false;
+            txtAlamat.Enabled = false;
+            txtNoHp.Enabled = false;
+            btnAdd.Enabled = true;
+            btnSave.Enabled = false;
+            btnClear.Enabled = false;
+            clearBinding();
+            FormPemilikKos_Load();
         }
 
         private void button4_Click(object sender, EventArgs e)
