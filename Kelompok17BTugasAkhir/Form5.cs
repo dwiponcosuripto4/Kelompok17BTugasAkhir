@@ -31,5 +31,25 @@ namespace Kelompok17BTugasAkhir
         {
 
         }
+
+        private void FormPenyewa_Load()
+        {
+            koneksi.Open();
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_pemilik, m.nama_pemilik, "
+            + "m.alamat, m.no_hp From dbo.pemilik m ", koneksi));
+            DataSet ds = new DataSet();
+            dataAdapter1.Fill(ds);
+
+            this.customerBindingSource.DataSource = ds.Tables[0];
+            this.textidp.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "id_Penyewa", true));
+            this.textnp.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "nama_Penyewa", true));
+            this.textalamat.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "alamat", true));
+            this.textNoHp.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "no_hp", true));
+            koneksi.Close();
+        }
     }
 }
