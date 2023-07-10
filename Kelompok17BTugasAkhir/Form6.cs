@@ -20,6 +20,8 @@ namespace Kelompok17BTugasAkhir
         public admin()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
+            this.bnadmin.BindingSource = this.customerBindingSource;
         }
 
         private void Form6_Load(object sender, EventArgs e)
