@@ -85,13 +85,13 @@ namespace Kelompok17BTugasAkhir
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_kos, m.nama_kos, "
-            + "m.alamat, m.no_hp, kapasitas, harga From dbo.Kos m ", koneksi));
+            + "m.alamat, m.no_hp, m.kapasitas, m.harga from dbo.kos m ", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
 
             this.customerBindingSource.DataSource = ds.Tables[0];
             this.textidkk.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "id_koskosan", true));
+                new Binding("Text", this.customerBindingSource, "id_kos", true));
             this.textNK.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "nama_kos", true));
             this.textAlamat.DataBindings.Add(
@@ -99,9 +99,9 @@ namespace Kelompok17BTugasAkhir
             this.textNoHp.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "no_hp", true));
             this.textKK.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "kapasitas_kamar", true));
+                new Binding("Text", this.customerBindingSource, "kapasitas", true));
             this.textHS.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "harga_sewa", true));
+                new Binding("Text", this.customerBindingSource, "harga", true));
             koneksi.Close();
         }
 
