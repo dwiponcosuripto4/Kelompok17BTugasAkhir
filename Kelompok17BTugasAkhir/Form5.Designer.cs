@@ -1,6 +1,6 @@
 ﻿namespace Kelompok17BTugasAkhir
 {
-    partial class Form5
+    partial class FormPenyewa
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textidp = new System.Windows.Forms.TextBox();
+            this.textnp = new System.Windows.Forms.TextBox();
+            this.textalamat = new System.Windows.Forms.TextBox();
+            this.textNoHp = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,111 +47,99 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(128, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id_Penyewa";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 47);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(128, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nama Penyewa";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(85, 77);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(128, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Alamat";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(85, 107);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(128, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "No Hp";
             // 
-            // textBox1
+            // textidp
             // 
-            this.textBox1.Location = new System.Drawing.Point(197, 19);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 20);
-            this.textBox1.TabIndex = 4;
+            this.textidp.Location = new System.Drawing.Point(296, 29);
+            this.textidp.Name = "textidp";
+            this.textidp.Size = new System.Drawing.Size(288, 26);
+            this.textidp.TabIndex = 4;
             // 
-            // textBox2
+            // textnp
             // 
-            this.textBox2.Location = new System.Drawing.Point(197, 47);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 20);
-            this.textBox2.TabIndex = 5;
+            this.textnp.Location = new System.Drawing.Point(296, 69);
+            this.textnp.Name = "textnp";
+            this.textnp.Size = new System.Drawing.Size(288, 26);
+            this.textnp.TabIndex = 5;
             // 
-            // textBox3
+            // textalamat
             // 
-            this.textBox3.Location = new System.Drawing.Point(197, 77);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 20);
-            this.textBox3.TabIndex = 6;
+            this.textalamat.Location = new System.Drawing.Point(296, 118);
+            this.textalamat.Name = "textalamat";
+            this.textalamat.Size = new System.Drawing.Size(288, 26);
+            this.textalamat.TabIndex = 6;
             // 
-            // textBox4
+            // textNoHp
             // 
-            this.textBox4.Location = new System.Drawing.Point(197, 107);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 7;
+            this.textNoHp.Location = new System.Drawing.Point(296, 165);
+            this.textNoHp.Name = "textNoHp";
+            this.textNoHp.Size = new System.Drawing.Size(288, 26);
+            this.textNoHp.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(87, 137);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(130, 211);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 20);
+            this.button1.Size = new System.Drawing.Size(75, 31);
             this.button1.TabIndex = 8;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(173, 137);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(260, 211);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 20);
+            this.button2.Size = new System.Drawing.Size(75, 31);
             this.button2.TabIndex = 9;
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(255, 137);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(382, 211);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 20);
+            this.button3.Size = new System.Drawing.Size(75, 31);
             this.button3.TabIndex = 10;
             this.button3.Text = "Hapus";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(338, 137);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Location = new System.Drawing.Point(507, 211);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 20);
+            this.button4.Size = new System.Drawing.Size(75, 31);
             this.button4.TabIndex = 11;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
@@ -160,34 +148,32 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(87, 170);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(130, 262);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(301, 97);
+            this.dataGridView1.Size = new System.Drawing.Size(452, 149);
             this.dataGridView1.TabIndex = 12;
             // 
-            // Form5
+            // FormPenyewa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textNoHp);
+            this.Controls.Add(this.textalamat);
+            this.Controls.Add(this.textnp);
+            this.Controls.Add(this.textidp);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form5";
+            this.Name = "FormPenyewa";
             this.Text = "Penyewa";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -202,10 +188,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textidp;
+        private System.Windows.Forms.TextBox textnp;
+        private System.Windows.Forms.TextBox textalamat;
+        private System.Windows.Forms.TextBox textNoHp;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
