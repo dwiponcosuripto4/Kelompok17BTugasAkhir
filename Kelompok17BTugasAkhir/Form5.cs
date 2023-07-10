@@ -25,6 +25,21 @@ namespace Kelompok17BTugasAkhir
             this.bnpenyewa.BindingSource = this.customerBindingSource;
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            textidp.Text = "";
+            textnp.Text = "";
+            textalamat.Text = "";
+            textNoHp.Text = "";
+            textidp.Enabled = true;
+            textnp.Enabled = true;
+            textalamat.Enabled = true;
+            textNoHp.Enabled = true;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
