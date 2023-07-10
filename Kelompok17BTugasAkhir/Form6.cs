@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Kelompok17BTugasAkhir
 {
@@ -17,6 +18,24 @@ namespace Kelompok17BTugasAkhir
         private SqlConnection koneksi;
         private string idka, idko, nohp, usern, pssw;
         BindingSource customerBindingSource = new BindingSource();
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            textidka.Text = "";
+            textidko.Text = "";
+            textnohp.Text = "";
+            textuser.Text = "";
+            textpsw.Text = "";
+            textidka.Enabled = true;
+            textidko.Enabled = true;
+            textnohp.Enabled = true;
+            textuser.Enabled = true;
+            textpsw.Enabled = true;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
+        }
+
         public admin()
         {
             InitializeComponent();
