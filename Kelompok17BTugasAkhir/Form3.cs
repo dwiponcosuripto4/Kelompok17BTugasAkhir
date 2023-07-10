@@ -15,12 +15,14 @@ namespace Kelompok17BTugasAkhir
     {
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
-        BindingSource customerBindingSource = new BindingSource();
         private string idkk, namakos, alamat, nohp, kapsk, hs;
+        BindingSource customerBindingSource = new BindingSource();
         public KosKosan()
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
+            this.bnKos.BindingSource = this.customerBindingSource;
+            refreshform();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -51,7 +53,7 @@ namespace Kelompok17BTugasAkhir
             kapsk = textKK.Text;
             hs = textHS.Text;
             koneksi.Open();
-            string str = "insert into dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp)" + "values(@idpm, @nmpm, @Al, @nohp)";
+            string str = "insert into dbo.Kos (id_kos, nama_kos, alamat, no_hp, kapasitas, harga)" + "values(@idk, @nk, @Al, @nohp, @kaps, @hrs)";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SqlParameter("idk", idkk));
@@ -69,11 +71,21 @@ namespace Kelompok17BTugasAkhir
             refreshform();
         }
 
-        private void FormPemilikKos_Load()
+        private void bnKos_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshform();
+        }
+
+        private void KosKosan_Load()
         {
             koneksi.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_pemilik, m.nama_pemilik, "
-            + "m.alamat, m.no_hp From dbo.pemilik m ", koneksi));
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_kos, m.nama_kos, "
+            + "m.alamat, m.no_hp, kapasitas, harga From dbo.Kos m ", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
 
@@ -124,7 +136,7 @@ namespace Kelompok17BTugasAkhir
             btnSave.Enabled = false;
             btnClear.Enabled = false;
             clearBinding();
-            FormPemilikKos_Load();
+            KosKosan_Load();
         }
     }
 }
