@@ -131,6 +131,54 @@ namespace Kelompok17BTugasAkhir
 
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            idt = textidt.Text;
+            idpm = cbxIdPemilik.Text;
+            idp = cbxIdPenyewa.Text;
+            harga = txtHarga.Text;
+            tm = dtMasuk.Value;
+            tk = dtKeluar.Value;
+            int im = 0, ip = 0;
+            koneksi.Open();
+            string strs = "select id_pemilik from dbo.Pemilik where nama_pemilik = @dd";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@dd", idpm));
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                im = int.Parse(dr["id_pemilik"].ToString());
+            }
+            dr.Close();
+            string strs2 = "SELECT id_penyewa FROM dbo.Penyewa WHERE nama_penyewa = @dd";
+            SqlCommand cm2 = new SqlCommand(strs2, koneksi);
+            cm2.CommandType = CommandType.Text;
+            cm2.Parameters.Add(new SqlParameter("@dd", idp));
+            SqlDataReader dr2 = cm2.ExecuteReader();
+            while (dr2.Read())
+            {
+                ip = int.Parse(dr2["id_penyewa"].ToString());
+            }
+            dr2.Close();
+            string str = "insert into dbo.Transaksi (id_transaksi, id_pemilik, id_penyewa, harga, tanggal_masuk, tanggal_keluar)" + "values(@Idt, @Idpm, @Idp, @Hrg, @Tm, @Tk)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("idkmr", idt));
+            cmd.Parameters.Add(new SqlParameter("Idpm", im));
+            cmd.Parameters.Add(new SqlParameter("Idp", ip));
+            cmd.Parameters.Add(new SqlParameter("Hrg", harga));
+            cmd.Parameters.Add(new SqlParameter("Tm", tm));
+            cmd.Parameters.Add(new SqlParameter("Tk", tk));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            refreshform();
+        }
+
         private void clearBinding()
         {
             this.textidt.DataBindings.Clear();
