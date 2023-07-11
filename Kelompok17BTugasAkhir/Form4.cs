@@ -20,9 +20,7 @@ namespace Kelompok17BTugasAkhir
 
         private void FormKamar_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'kosDataSet.Kamar' table. You can move, or remove it, as needed.
-            this.kamarTableAdapter.Fill(this.kosDataSet.Kamar);
-
+            
         }
 
         public FormKamar()
@@ -101,7 +99,7 @@ namespace Kelompok17BTugasAkhir
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_kamar, m.fasilitas, "
-            + "m.harga, m.status From dbo.Kamar m " +
+            + "m.harga, m.status, p.nama_kos From dbo.Kamar m " +
             "join dbo.Kos p on m.id_kos = p.id_kos", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
