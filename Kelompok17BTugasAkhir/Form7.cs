@@ -56,25 +56,26 @@ namespace Kelompok17BTugasAkhir
         private void FormTransaksi_Load()
         {
             koneksi.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_kamar, m.fasilitas, "
-            + "m.harga, m.status, p.nama_kos From dbo.Kamar m " +
-            "join dbo.Kos p on m.id_kos = p.id_kos", koneksi));
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("SELECT m.id_transaksi, p1.nama_pemilik, "
+                + "p2.nama_penyewa, m.harga, m.tanggal_masuk, m.tanggal_keluar FROM dbo.Transaksi m " +
+                "JOIN dbo.Pemilik p1 ON m.id_pemilik = p1.id_pemilik " +
+                "JOIN dbo.Penyewa p2 ON m.id_penyewa = p2.id_penyewa", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
 
             this.customerBindingSource.DataSource = ds.Tables[0];
             this.textidt.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "id_kamar", true));
+                new Binding("Text", this.customerBindingSource, "id_transaksi", true));
             this.cbxIdPemilik.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "fasilitas", true));
+                new Binding("Text", this.customerBindingSource, "nama_pemilik", true));
             this.cbxIdPenyewa.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "harga", true));
+                new Binding("Text", this.customerBindingSource, "nama_penyewa", true));
             this.txtHarga.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "status", true));
+                new Binding("Text", this.customerBindingSource, "harga", true));
             this.dtMasuk.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "nama_kos", true));
+                new Binding("Text", this.customerBindingSource, "tanggal_masuk", true));
             this.dtKeluar.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "nama_kos", true));
+                new Binding("Text", this.customerBindingSource, "tanggal_keluar", true));
             koneksi.Close();
         }
 
@@ -102,15 +103,15 @@ namespace Kelompok17BTugasAkhir
         private void Pemilikcbx()
         {
             koneksi.Open();
-            string str = "select nama_kos from dbo.Kos";
+            string str = "select nama_pemilik from dbo.Pemilik";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
             cmd.ExecuteReader();
             koneksi.Close();
-            cbxIdPemilik.DisplayMember = "nama_kos";
-            cbxIdPemilik.ValueMember = "id_kos";
+            cbxIdPemilik.DisplayMember = "nama_pemilik";
+            cbxIdPemilik.ValueMember = "id_pemilik";
             cbxIdPemilik.DataSource = ds.Tables[0];
 
         }
@@ -118,15 +119,15 @@ namespace Kelompok17BTugasAkhir
         private void Penyewacbx()
         {
             koneksi.Open();
-            string str = "select nama_kos from dbo.Kos";
+            string str = "select nama_penyewa from dbo.Penyewa";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
             cmd.ExecuteReader();
             koneksi.Close();
-            cbxIdPenyewa.DisplayMember = "nama_kos";
-            cbxIdPenyewa.ValueMember = "id_kos";
+            cbxIdPenyewa.DisplayMember = "nama_penyewa";
+            cbxIdPenyewa.ValueMember = "id_penyewa";
             cbxIdPenyewa.DataSource = ds.Tables[0];
 
         }
