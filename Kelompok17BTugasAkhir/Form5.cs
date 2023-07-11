@@ -49,7 +49,7 @@ namespace Kelompok17BTugasAkhir
             alamat = textalamat.Text;
             NoHp = textNoHp.Text;
             koneksi.Open();
-            string str = "insert into dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp)" + "values(@idpm, @nmpm, @Al, @nohp)";
+            string str = "insert into dbo.Penyewa (id_penyewa, nama_penyewa, alamat, no_hp)" + "values(@idp, @np, @Al, @nohp)";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SqlParameter("idp", idp));
@@ -61,6 +61,8 @@ namespace Kelompok17BTugasAkhir
             koneksi.Close();
 
             MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            refreshform();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -81,16 +83,16 @@ namespace Kelompok17BTugasAkhir
         private void FormPenyewa_Load()
         {
             koneksi.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_pemilik, m.nama_pemilik, "
-            + "m.alamat, m.no_hp From dbo.pemilik m ", koneksi));
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_penyewa, m.nama_penyewa, "
+            + "m.alamat, m.no_hp From dbo.penyewa m ", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
 
             this.customerBindingSource.DataSource = ds.Tables[0];
             this.textidp.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "id_Penyewa", true));
+                new Binding("Text", this.customerBindingSource, "id_penyewa", true));
             this.textnp.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "nama_Penyewa", true));
+                new Binding("Text", this.customerBindingSource, "nama_penyewa", true));
             this.textalamat.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "alamat", true));
             this.textNoHp.DataBindings.Add(
