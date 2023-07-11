@@ -53,12 +53,13 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cbxIdPenyewa = new System.Windows.Forms.ComboBox();
-            this.cbxHarga = new System.Windows.Forms.ComboBox();
             this.cbxIdPemilik = new System.Windows.Forms.ComboBox();
             this.dtMasuk = new System.Windows.Forms.DateTimePicker();
             this.dtKeluar = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtHarga = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bntransaksi)).BeginInit();
             this.bntransaksi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,6 +84,7 @@
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Hapus";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // button4
             // 
@@ -288,15 +290,6 @@
             this.cbxIdPenyewa.Size = new System.Drawing.Size(135, 21);
             this.cbxIdPenyewa.TabIndex = 13;
             // 
-            // cbxHarga
-            // 
-            this.cbxHarga.FormattingEnabled = true;
-            this.cbxHarga.Location = new System.Drawing.Point(173, 96);
-            this.cbxHarga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbxHarga.Name = "cbxHarga";
-            this.cbxHarga.Size = new System.Drawing.Size(135, 21);
-            this.cbxHarga.TabIndex = 14;
-            // 
             // cbxIdPemilik
             // 
             this.cbxIdPemilik.FormattingEnabled = true;
@@ -343,17 +336,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(431, 97);
             this.dataGridView1.TabIndex = 19;
             // 
+            // txtHarga
+            // 
+            this.txtHarga.Location = new System.Drawing.Point(173, 96);
+            this.txtHarga.Name = "txtHarga";
+            this.txtHarga.Size = new System.Drawing.Size(135, 20);
+            this.txtHarga.TabIndex = 20;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // FormTransaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.txtHarga);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dtKeluar);
             this.Controls.Add(this.dtMasuk);
             this.Controls.Add(this.cbxIdPemilik);
-            this.Controls.Add(this.cbxHarga);
             this.Controls.Add(this.cbxIdPenyewa);
             this.Controls.Add(this.bntransaksi);
             this.Controls.Add(this.textidt);
@@ -404,11 +409,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ComboBox cbxIdPenyewa;
-        private System.Windows.Forms.ComboBox cbxHarga;
         private System.Windows.Forms.ComboBox cbxIdPemilik;
         private System.Windows.Forms.DateTimePicker dtMasuk;
         private System.Windows.Forms.DateTimePicker dtKeluar;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtHarga;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
