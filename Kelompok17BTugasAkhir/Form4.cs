@@ -20,7 +20,11 @@ namespace Kelompok17BTugasAkhir
 
         private void FormKamar_Load(object sender, EventArgs e)
         {
-            
+            // TODO: This line of code loads data into the 'kosDataSet1.Kamar' table. You can move, or remove it, as needed.
+            this.kamarTableAdapter1.Fill(this.kosDataSet1.Kamar);
+            // TODO: This line of code loads data into the 'kosDataSet.Penyewa' table. You can move, or remove it, as needed.
+            this.penyewaTableAdapter.Fill(this.kosDataSet.Penyewa);
+
         }
 
         public FormKamar()
@@ -116,6 +120,11 @@ namespace Kelompok17BTugasAkhir
             this.cbxKos.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "nama_kos", true));
             koneksi.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void Koscbx()
