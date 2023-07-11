@@ -43,6 +43,12 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namapemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pemilikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
             this.bnPemilik = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -55,89 +61,92 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
-            this.pemilikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pemilikTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.PemilikTableAdapter();
-            this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namapemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnPemilik)).BeginInit();
             this.bnPemilik.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 51);
+            this.label1.Location = new System.Drawing.Point(791, 64);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id_Pemilik";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 83);
+            this.label2.Location = new System.Drawing.Point(791, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nama Pemilik";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(132, 113);
+            this.label3.Location = new System.Drawing.Point(791, 160);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Alamat";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(133, 147);
+            this.label4.Location = new System.Drawing.Point(793, 212);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "No Hp";
             // 
             // txtIdPemilik
             // 
-            this.txtIdPemilik.Location = new System.Drawing.Point(241, 44);
+            this.txtIdPemilik.Location = new System.Drawing.Point(955, 54);
+            this.txtIdPemilik.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdPemilik.Name = "txtIdPemilik";
-            this.txtIdPemilik.Size = new System.Drawing.Size(100, 20);
+            this.txtIdPemilik.Size = new System.Drawing.Size(148, 26);
             this.txtIdPemilik.TabIndex = 4;
             // 
             // txtNamaPemilik
             // 
-            this.txtNamaPemilik.Location = new System.Drawing.Point(241, 76);
+            this.txtNamaPemilik.Location = new System.Drawing.Point(955, 103);
+            this.txtNamaPemilik.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNamaPemilik.Name = "txtNamaPemilik";
-            this.txtNamaPemilik.Size = new System.Drawing.Size(100, 20);
+            this.txtNamaPemilik.Size = new System.Drawing.Size(148, 26);
             this.txtNamaPemilik.TabIndex = 5;
             // 
             // txtAlamat
             // 
-            this.txtAlamat.Location = new System.Drawing.Point(241, 110);
+            this.txtAlamat.Location = new System.Drawing.Point(955, 155);
+            this.txtAlamat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAlamat.Name = "txtAlamat";
-            this.txtAlamat.Size = new System.Drawing.Size(100, 20);
+            this.txtAlamat.Size = new System.Drawing.Size(148, 26);
             this.txtAlamat.TabIndex = 6;
             // 
             // txtNoHp
             // 
-            this.txtNoHp.Location = new System.Drawing.Point(241, 147);
+            this.txtNoHp.Location = new System.Drawing.Point(955, 212);
+            this.txtNoHp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNoHp.Name = "txtNoHp";
-            this.txtNoHp.Size = new System.Drawing.Size(100, 20);
+            this.txtNoHp.Size = new System.Drawing.Size(148, 26);
             this.txtNoHp.TabIndex = 7;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(80, 195);
+            this.btnAdd.Location = new System.Drawing.Point(13, 350);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(112, 35);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -145,9 +154,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(212, 195);
+            this.btnSave.Location = new System.Drawing.Point(192, 350);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 35);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -155,9 +165,10 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(351, 195);
+            this.btnClear.Location = new System.Drawing.Point(372, 350);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(112, 35);
             this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Hapus";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -165,9 +176,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(481, 195);
+            this.button4.Location = new System.Drawing.Point(566, 350);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(112, 35);
             this.button4.TabIndex = 11;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
@@ -183,11 +195,54 @@
             this.alamatDataGridViewTextBoxColumn,
             this.nohpDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pemilikBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 248);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 38);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(665, 200);
             this.dataGridView1.TabIndex = 12;
+            // 
+            // idpemilikDataGridViewTextBoxColumn
+            // 
+            this.idpemilikDataGridViewTextBoxColumn.DataPropertyName = "id_pemilik";
+            this.idpemilikDataGridViewTextBoxColumn.HeaderText = "id_pemilik";
+            this.idpemilikDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idpemilikDataGridViewTextBoxColumn.Name = "idpemilikDataGridViewTextBoxColumn";
+            this.idpemilikDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // namapemilikDataGridViewTextBoxColumn
+            // 
+            this.namapemilikDataGridViewTextBoxColumn.DataPropertyName = "nama_pemilik";
+            this.namapemilikDataGridViewTextBoxColumn.HeaderText = "nama_pemilik";
+            this.namapemilikDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.namapemilikDataGridViewTextBoxColumn.Name = "namapemilikDataGridViewTextBoxColumn";
+            this.namapemilikDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
+            this.alamatDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            this.alamatDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nohpDataGridViewTextBoxColumn
+            // 
+            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            this.nohpDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // pemilikBindingSource
+            // 
+            this.pemilikBindingSource.DataMember = "Pemilik";
+            this.pemilikBindingSource.DataSource = this.kosDataSet;
+            // 
+            // kosDataSet
+            // 
+            this.kosDataSet.DataSetName = "KosDataSet";
+            this.kosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bnPemilik
             // 
@@ -213,9 +268,9 @@
             this.bnPemilik.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bnPemilik.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnPemilik.Name = "bnPemilik";
-            this.bnPemilik.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.bnPemilik.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.bnPemilik.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnPemilik.Size = new System.Drawing.Size(800, 31);
+            this.bnPemilik.Size = new System.Drawing.Size(1200, 33);
             this.bnPemilik.TabIndex = 13;
             this.bnPemilik.Text = "bindingNavigator1";
             this.bnPemilik.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems);
@@ -223,7 +278,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -233,7 +288,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -242,7 +297,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -251,13 +306,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -265,14 +320,14 @@
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 31);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -280,7 +335,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -289,13 +344,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -303,52 +358,18 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // kosDataSet
-            // 
-            this.kosDataSet.DataSetName = "KosDataSet";
-            this.kosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pemilikBindingSource
-            // 
-            this.pemilikBindingSource.DataMember = "Pemilik";
-            this.pemilikBindingSource.DataSource = this.kosDataSet;
             // 
             // pemilikTableAdapter
             // 
             this.pemilikTableAdapter.ClearBeforeFill = true;
             // 
-            // idpemilikDataGridViewTextBoxColumn
-            // 
-            this.idpemilikDataGridViewTextBoxColumn.DataPropertyName = "id_pemilik";
-            this.idpemilikDataGridViewTextBoxColumn.HeaderText = "id_pemilik";
-            this.idpemilikDataGridViewTextBoxColumn.Name = "idpemilikDataGridViewTextBoxColumn";
-            // 
-            // namapemilikDataGridViewTextBoxColumn
-            // 
-            this.namapemilikDataGridViewTextBoxColumn.DataPropertyName = "nama_pemilik";
-            this.namapemilikDataGridViewTextBoxColumn.HeaderText = "nama_pemilik";
-            this.namapemilikDataGridViewTextBoxColumn.Name = "namapemilikDataGridViewTextBoxColumn";
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
-            // 
-            // nohpDataGridViewTextBoxColumn
-            // 
-            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
-            // 
             // FormPemilikKos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 458);
             this.Controls.Add(this.bnPemilik);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
@@ -363,15 +384,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPemilikKos";
             this.Text = "PemilikKos";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnPemilik)).EndInit();
             this.bnPemilik.ResumeLayout(false);
             this.bnPemilik.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

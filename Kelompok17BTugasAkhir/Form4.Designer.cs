@@ -40,6 +40,13 @@
             this.txtHargaSewa = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idkamarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idkosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fasilitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kamarBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.kosDataSet1 = new Kelompok17BTugasAkhir.KosDataSet1();
             this.kamarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
             this.kamarBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -66,15 +73,10 @@
             this.kamarBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.kosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kamarBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.idkamarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idkosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fasilitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kosDataSet1 = new Kelompok17BTugasAkhir.KosDataSet1();
-            this.kamarBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.kamarTableAdapter1 = new Kelompok17BTugasAkhir.KosDataSet1TableAdapters.KamarTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource)).BeginInit();
@@ -84,81 +86,88 @@
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 35);
+            this.label1.Location = new System.Drawing.Point(885, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id Kamar";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(146, 165);
+            this.label2.Location = new System.Drawing.Point(891, 250);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 13);
+            this.label2.Size = new System.Drawing.Size(36, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kos";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 70);
+            this.label3.Location = new System.Drawing.Point(885, 104);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(67, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fasilitas";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(142, 102);
+            this.label4.Location = new System.Drawing.Point(885, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(97, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Harga Sewa";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(142, 128);
+            this.label5.Location = new System.Drawing.Point(885, 193);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Status";
             // 
             // txtIdKamar
             // 
-            this.txtIdKamar.Location = new System.Drawing.Point(265, 28);
+            this.txtIdKamar.Location = new System.Drawing.Point(1070, 39);
+            this.txtIdKamar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdKamar.Name = "txtIdKamar";
-            this.txtIdKamar.Size = new System.Drawing.Size(100, 20);
+            this.txtIdKamar.Size = new System.Drawing.Size(180, 26);
             this.txtIdKamar.TabIndex = 5;
             // 
             // txtFasilitas
             // 
-            this.txtFasilitas.Location = new System.Drawing.Point(265, 63);
+            this.txtFasilitas.Location = new System.Drawing.Point(1070, 93);
+            this.txtFasilitas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFasilitas.Name = "txtFasilitas";
-            this.txtFasilitas.Size = new System.Drawing.Size(100, 20);
+            this.txtFasilitas.Size = new System.Drawing.Size(180, 26);
             this.txtFasilitas.TabIndex = 7;
             // 
             // txtHargaSewa
             // 
-            this.txtHargaSewa.Location = new System.Drawing.Point(265, 95);
+            this.txtHargaSewa.Location = new System.Drawing.Point(1070, 142);
+            this.txtHargaSewa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtHargaSewa.Name = "txtHargaSewa";
-            this.txtHargaSewa.Size = new System.Drawing.Size(100, 20);
+            this.txtHargaSewa.Size = new System.Drawing.Size(180, 26);
             this.txtHargaSewa.TabIndex = 8;
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(265, 131);
+            this.txtStatus.Location = new System.Drawing.Point(1070, 198);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(100, 20);
+            this.txtStatus.Size = new System.Drawing.Size(180, 26);
             this.txtStatus.TabIndex = 9;
             // 
             // dataGridView1
@@ -172,11 +181,63 @@
             this.hargaDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.kamarBindingSource4;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 241);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 50);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(716, 197);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(817, 228);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idkamarDataGridViewTextBoxColumn
+            // 
+            this.idkamarDataGridViewTextBoxColumn.DataPropertyName = "id_kamar";
+            this.idkamarDataGridViewTextBoxColumn.HeaderText = "id_kamar";
+            this.idkamarDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idkamarDataGridViewTextBoxColumn.Name = "idkamarDataGridViewTextBoxColumn";
+            this.idkamarDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idkosDataGridViewTextBoxColumn
+            // 
+            this.idkosDataGridViewTextBoxColumn.DataPropertyName = "id_kos";
+            this.idkosDataGridViewTextBoxColumn.HeaderText = "id_kos";
+            this.idkosDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idkosDataGridViewTextBoxColumn.Name = "idkosDataGridViewTextBoxColumn";
+            this.idkosDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fasilitasDataGridViewTextBoxColumn
+            // 
+            this.fasilitasDataGridViewTextBoxColumn.DataPropertyName = "fasilitas";
+            this.fasilitasDataGridViewTextBoxColumn.HeaderText = "fasilitas";
+            this.fasilitasDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.fasilitasDataGridViewTextBoxColumn.Name = "fasilitasDataGridViewTextBoxColumn";
+            this.fasilitasDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // hargaDataGridViewTextBoxColumn
+            // 
+            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "harga";
+            this.hargaDataGridViewTextBoxColumn.HeaderText = "harga";
+            this.hargaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+            this.hargaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // kamarBindingSource4
+            // 
+            this.kamarBindingSource4.DataMember = "Kamar";
+            this.kamarBindingSource4.DataSource = this.kosDataSet1;
+            // 
+            // kosDataSet1
+            // 
+            this.kosDataSet1.DataSetName = "KosDataSet1";
+            this.kosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kamarBindingSource1
             // 
@@ -195,9 +256,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(103, 191);
+            this.btnAdd.Location = new System.Drawing.Point(13, 352);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(112, 35);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -205,9 +267,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(265, 191);
+            this.btnSave.Location = new System.Drawing.Point(203, 352);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 35);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -215,9 +278,10 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(438, 191);
+            this.btnClear.Location = new System.Drawing.Point(460, 352);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(112, 35);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Hapus";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -225,9 +289,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(612, 191);
+            this.button4.Location = new System.Drawing.Point(718, 352);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(112, 35);
             this.button4.TabIndex = 14;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
@@ -238,6 +303,7 @@
             this.bnKamar.AddNewItem = this.bindingNavigatorAddNewItem;
             this.bnKamar.CountItem = this.bindingNavigatorCountItem;
             this.bnKamar.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bnKamar.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.bnKamar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -256,8 +322,9 @@
             this.bnKamar.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bnKamar.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnKamar.Name = "bnKamar";
+            this.bnKamar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.bnKamar.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnKamar.Size = new System.Drawing.Size(800, 25);
+            this.bnKamar.Size = new System.Drawing.Size(1263, 33);
             this.bnKamar.TabIndex = 15;
             this.bnKamar.Text = "bindingNavigator1";
             this.bnKamar.RefreshItems += new System.EventHandler(this.bnKamar_RefreshItems);
@@ -268,13 +335,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -284,7 +351,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -293,7 +360,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -302,13 +369,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -316,14 +383,14 @@
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 31);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -331,7 +398,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -340,20 +407,21 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // cbxKos
             // 
             this.cbxKos.FormattingEnabled = true;
-            this.cbxKos.Location = new System.Drawing.Point(265, 165);
+            this.cbxKos.Location = new System.Drawing.Point(1070, 250);
+            this.cbxKos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxKos.Name = "cbxKos";
-            this.cbxKos.Size = new System.Drawing.Size(121, 21);
+            this.cbxKos.Size = new System.Drawing.Size(180, 28);
             this.cbxKos.TabIndex = 16;
             // 
             // kamarTableAdapter
@@ -384,55 +452,15 @@
             this.kamarBindingSource3.DataMember = "Kamar";
             this.kamarBindingSource3.DataSource = this.kosDataSetBindingSource;
             // 
-            // idkamarDataGridViewTextBoxColumn
-            // 
-            this.idkamarDataGridViewTextBoxColumn.DataPropertyName = "id_kamar";
-            this.idkamarDataGridViewTextBoxColumn.HeaderText = "id_kamar";
-            this.idkamarDataGridViewTextBoxColumn.Name = "idkamarDataGridViewTextBoxColumn";
-            // 
-            // idkosDataGridViewTextBoxColumn
-            // 
-            this.idkosDataGridViewTextBoxColumn.DataPropertyName = "id_kos";
-            this.idkosDataGridViewTextBoxColumn.HeaderText = "id_kos";
-            this.idkosDataGridViewTextBoxColumn.Name = "idkosDataGridViewTextBoxColumn";
-            // 
-            // fasilitasDataGridViewTextBoxColumn
-            // 
-            this.fasilitasDataGridViewTextBoxColumn.DataPropertyName = "fasilitas";
-            this.fasilitasDataGridViewTextBoxColumn.HeaderText = "fasilitas";
-            this.fasilitasDataGridViewTextBoxColumn.Name = "fasilitasDataGridViewTextBoxColumn";
-            // 
-            // hargaDataGridViewTextBoxColumn
-            // 
-            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "harga";
-            this.hargaDataGridViewTextBoxColumn.HeaderText = "harga";
-            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // kosDataSet1
-            // 
-            this.kosDataSet1.DataSetName = "KosDataSet1";
-            this.kosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kamarBindingSource4
-            // 
-            this.kamarBindingSource4.DataMember = "Kamar";
-            this.kamarBindingSource4.DataSource = this.kosDataSet1;
-            // 
             // kamarTableAdapter1
             // 
             this.kamarTableAdapter1.ClearBeforeFill = true;
             // 
             // FormKamar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1263, 692);
             this.Controls.Add(this.cbxKos);
             this.Controls.Add(this.bnKamar);
             this.Controls.Add(this.button4);
@@ -449,10 +477,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormKamar";
             this.Text = "Kamar";
             this.Load += new System.EventHandler(this.FormKamar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource)).EndInit();
@@ -463,8 +494,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

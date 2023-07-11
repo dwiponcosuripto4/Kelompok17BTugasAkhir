@@ -75,7 +75,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 51);
+            this.label1.Location = new System.Drawing.Point(851, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 0;
@@ -84,7 +84,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(220, 83);
+            this.label2.Location = new System.Drawing.Point(851, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 1;
@@ -93,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(220, 115);
+            this.label3.Location = new System.Drawing.Point(851, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 2;
@@ -102,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 147);
+            this.label4.Location = new System.Drawing.Point(851, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 3;
@@ -110,35 +110,35 @@
             // 
             // textidp
             // 
-            this.textidp.Location = new System.Drawing.Point(387, 51);
+            this.textidp.Location = new System.Drawing.Point(1018, 48);
             this.textidp.Name = "textidp";
             this.textidp.Size = new System.Drawing.Size(288, 26);
             this.textidp.TabIndex = 4;
             // 
             // textnp
             // 
-            this.textnp.Location = new System.Drawing.Point(388, 83);
+            this.textnp.Location = new System.Drawing.Point(1019, 80);
             this.textnp.Name = "textnp";
             this.textnp.Size = new System.Drawing.Size(288, 26);
             this.textnp.TabIndex = 5;
             // 
             // textalamat
             // 
-            this.textalamat.Location = new System.Drawing.Point(388, 115);
+            this.textalamat.Location = new System.Drawing.Point(1019, 112);
             this.textalamat.Name = "textalamat";
             this.textalamat.Size = new System.Drawing.Size(288, 26);
             this.textalamat.TabIndex = 6;
             // 
             // textNoHp
             // 
-            this.textNoHp.Location = new System.Drawing.Point(387, 147);
+            this.textNoHp.Location = new System.Drawing.Point(1018, 144);
             this.textNoHp.Name = "textNoHp";
             this.textNoHp.Size = new System.Drawing.Size(288, 26);
             this.textNoHp.TabIndex = 7;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(224, 265);
+            this.btnAdd.Location = new System.Drawing.Point(12, 254);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 31);
             this.btnAdd.TabIndex = 8;
@@ -148,7 +148,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(352, 265);
+            this.btnSave.Location = new System.Drawing.Point(241, 254);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 31);
             this.btnSave.TabIndex = 9;
@@ -158,7 +158,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(476, 265);
+            this.btnClear.Location = new System.Drawing.Point(482, 254);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 31);
             this.btnClear.TabIndex = 10;
@@ -168,7 +168,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(600, 265);
+            this.button4.Location = new System.Drawing.Point(755, 254);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 31);
             this.button4.TabIndex = 11;
@@ -187,11 +187,11 @@
             this.nohpDataGridViewTextBoxColumn,
             this.idkamarDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.penyewaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(54, 320);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(866, 232);
+            this.dataGridView1.Size = new System.Drawing.Size(818, 156);
             this.dataGridView1.TabIndex = 12;
             // 
             // idpenyewaDataGridViewTextBoxColumn
@@ -270,7 +270,7 @@
             this.bnpenyewa.Name = "bnpenyewa";
             this.bnpenyewa.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.bnpenyewa.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnpenyewa.Size = new System.Drawing.Size(1010, 38);
+            this.bnpenyewa.Size = new System.Drawing.Size(1328, 33);
             this.bnpenyewa.TabIndex = 13;
             this.bnpenyewa.Text = "bindingNavigator1";
             // 
@@ -280,7 +280,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
@@ -367,7 +367,7 @@
             // cbxKamar
             // 
             this.cbxKamar.FormattingEnabled = true;
-            this.cbxKamar.Location = new System.Drawing.Point(387, 179);
+            this.cbxKamar.Location = new System.Drawing.Point(1018, 176);
             this.cbxKamar.Name = "cbxKamar";
             this.cbxKamar.Size = new System.Drawing.Size(288, 28);
             this.cbxKamar.TabIndex = 14;
@@ -375,7 +375,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(220, 179);
+            this.label5.Location = new System.Drawing.Point(851, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 15;
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 603);
+            this.ClientSize = new System.Drawing.Size(1328, 603);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbxKamar);
             this.Controls.Add(this.bnpenyewa);
