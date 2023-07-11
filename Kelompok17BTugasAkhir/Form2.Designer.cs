@@ -44,7 +44,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bnPemilik = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -55,9 +54,19 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
+            this.pemilikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pemilikTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.PemilikTableAdapter();
+            this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namapemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnPemilik)).BeginInit();
             this.bnPemilik.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,7 +175,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpemilikDataGridViewTextBoxColumn,
+            this.namapemilikDataGridViewTextBoxColumn,
+            this.alamatDataGridViewTextBoxColumn,
+            this.nohpDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.pemilikBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(37, 248);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -203,15 +219,6 @@
             this.bnPemilik.TabIndex = 13;
             this.bnPemilik.Text = "bindingNavigator1";
             this.bnPemilik.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
@@ -290,6 +297,53 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // kosDataSet
+            // 
+            this.kosDataSet.DataSetName = "KosDataSet";
+            this.kosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pemilikBindingSource
+            // 
+            this.pemilikBindingSource.DataMember = "Pemilik";
+            this.pemilikBindingSource.DataSource = this.kosDataSet;
+            // 
+            // pemilikTableAdapter
+            // 
+            this.pemilikTableAdapter.ClearBeforeFill = true;
+            // 
+            // idpemilikDataGridViewTextBoxColumn
+            // 
+            this.idpemilikDataGridViewTextBoxColumn.DataPropertyName = "id_pemilik";
+            this.idpemilikDataGridViewTextBoxColumn.HeaderText = "id_pemilik";
+            this.idpemilikDataGridViewTextBoxColumn.Name = "idpemilikDataGridViewTextBoxColumn";
+            // 
+            // namapemilikDataGridViewTextBoxColumn
+            // 
+            this.namapemilikDataGridViewTextBoxColumn.DataPropertyName = "nama_pemilik";
+            this.namapemilikDataGridViewTextBoxColumn.HeaderText = "nama_pemilik";
+            this.namapemilikDataGridViewTextBoxColumn.Name = "namapemilikDataGridViewTextBoxColumn";
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            // 
+            // nohpDataGridViewTextBoxColumn
+            // 
+            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            // 
             // FormPemilikKos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +370,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnPemilik)).EndInit();
             this.bnPemilik.ResumeLayout(false);
             this.bnPemilik.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +404,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private KosDataSet kosDataSet;
+        private System.Windows.Forms.BindingSource pemilikBindingSource;
+        private KosDataSetTableAdapters.PemilikTableAdapter pemilikTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpemilikDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namapemilikDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nohpDataGridViewTextBoxColumn;
     }
 }

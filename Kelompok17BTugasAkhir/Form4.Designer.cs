@@ -57,9 +57,19 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cbxKos = new System.Windows.Forms.ComboBox();
+            this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
+            this.kamarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kamarTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.KamarTableAdapter();
+            this.idkamarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idkosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fasilitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnKamar)).BeginInit();
             this.bnKamar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -137,7 +147,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idkamarDataGridViewTextBoxColumn,
+            this.idkosDataGridViewTextBoxColumn,
+            this.fasilitasDataGridViewTextBoxColumn,
+            this.hargaDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.kamarBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(60, 230);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(716, 197);
@@ -306,6 +324,50 @@
             this.cbxKos.Size = new System.Drawing.Size(121, 21);
             this.cbxKos.TabIndex = 16;
             // 
+            // kosDataSet
+            // 
+            this.kosDataSet.DataSetName = "KosDataSet";
+            this.kosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kamarBindingSource
+            // 
+            this.kamarBindingSource.DataMember = "Kamar";
+            this.kamarBindingSource.DataSource = this.kosDataSet;
+            // 
+            // kamarTableAdapter
+            // 
+            this.kamarTableAdapter.ClearBeforeFill = true;
+            // 
+            // idkamarDataGridViewTextBoxColumn
+            // 
+            this.idkamarDataGridViewTextBoxColumn.DataPropertyName = "id_kamar";
+            this.idkamarDataGridViewTextBoxColumn.HeaderText = "id_kamar";
+            this.idkamarDataGridViewTextBoxColumn.Name = "idkamarDataGridViewTextBoxColumn";
+            // 
+            // idkosDataGridViewTextBoxColumn
+            // 
+            this.idkosDataGridViewTextBoxColumn.DataPropertyName = "id_kos";
+            this.idkosDataGridViewTextBoxColumn.HeaderText = "id_kos";
+            this.idkosDataGridViewTextBoxColumn.Name = "idkosDataGridViewTextBoxColumn";
+            // 
+            // fasilitasDataGridViewTextBoxColumn
+            // 
+            this.fasilitasDataGridViewTextBoxColumn.DataPropertyName = "fasilitas";
+            this.fasilitasDataGridViewTextBoxColumn.HeaderText = "fasilitas";
+            this.fasilitasDataGridViewTextBoxColumn.Name = "fasilitasDataGridViewTextBoxColumn";
+            // 
+            // hargaDataGridViewTextBoxColumn
+            // 
+            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "harga";
+            this.hargaDataGridViewTextBoxColumn.HeaderText = "harga";
+            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
             // FormKamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +396,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnKamar)).EndInit();
             this.bnKamar.ResumeLayout(false);
             this.bnKamar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,5 +432,13 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ComboBox cbxKos;
+        private KosDataSet kosDataSet;
+        private System.Windows.Forms.BindingSource kamarBindingSource;
+        private KosDataSetTableAdapters.KamarTableAdapter kamarTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idkamarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idkosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fasilitasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }

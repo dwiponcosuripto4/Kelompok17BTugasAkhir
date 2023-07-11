@@ -20,6 +20,8 @@ namespace Kelompok17BTugasAkhir
 
         private void FormKamar_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kosDataSet.Kamar' table. You can move, or remove it, as needed.
+            this.kamarTableAdapter.Fill(this.kosDataSet.Kamar);
 
         }
 

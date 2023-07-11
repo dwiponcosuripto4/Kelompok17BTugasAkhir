@@ -77,6 +77,8 @@ namespace Kelompok17BTugasAkhir
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kosDataSet.Penyewa' table. You can move, or remove it, as needed.
+            this.penyewaTableAdapter.Fill(this.kosDataSet.Penyewa);
 
         }
 

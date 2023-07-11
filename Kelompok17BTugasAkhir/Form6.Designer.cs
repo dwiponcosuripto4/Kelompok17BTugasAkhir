@@ -57,9 +57,19 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
+            this.adminBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.adminTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.AdminTableAdapter();
+            this.idadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnadmin)).BeginInit();
             this.bnadmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -139,7 +149,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idadminDataGridViewTextBoxColumn,
+            this.namaadminDataGridViewTextBoxColumn,
+            this.nohpDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.adminBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(103, 261);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -306,6 +324,50 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
+            // kosDataSet
+            // 
+            this.kosDataSet.DataSetName = "KosDataSet";
+            this.kosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // adminBindingSource
+            // 
+            this.adminBindingSource.DataMember = "Admin";
+            this.adminBindingSource.DataSource = this.kosDataSet;
+            // 
+            // adminTableAdapter
+            // 
+            this.adminTableAdapter.ClearBeforeFill = true;
+            // 
+            // idadminDataGridViewTextBoxColumn
+            // 
+            this.idadminDataGridViewTextBoxColumn.DataPropertyName = "id_admin";
+            this.idadminDataGridViewTextBoxColumn.HeaderText = "id_admin";
+            this.idadminDataGridViewTextBoxColumn.Name = "idadminDataGridViewTextBoxColumn";
+            // 
+            // namaadminDataGridViewTextBoxColumn
+            // 
+            this.namaadminDataGridViewTextBoxColumn.DataPropertyName = "nama_admin";
+            this.namaadminDataGridViewTextBoxColumn.HeaderText = "nama_admin";
+            this.namaadminDataGridViewTextBoxColumn.Name = "namaadminDataGridViewTextBoxColumn";
+            // 
+            // nohpDataGridViewTextBoxColumn
+            // 
+            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +396,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnadmin)).EndInit();
             this.bnadmin.ResumeLayout(false);
             this.bnadmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,5 +432,13 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private KosDataSet kosDataSet;
+        private System.Windows.Forms.BindingSource adminBindingSource;
+        private KosDataSetTableAdapters.AdminTableAdapter adminTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idadminDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaadminDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nohpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
     }
 }
