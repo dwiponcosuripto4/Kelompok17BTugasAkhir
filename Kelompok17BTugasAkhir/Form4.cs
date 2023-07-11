@@ -15,7 +15,7 @@ namespace Kelompok17BTugasAkhir
     {
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
-        private string idkmr, idkk, fasilitas, hrga, status;
+        private string idkmr, idkk, fasilitas, hrga, sts;
         BindingSource customerBindingSource = new BindingSource();
 
         private void FormKamar_Load(object sender, EventArgs e)
@@ -44,14 +44,16 @@ namespace Kelompok17BTugasAkhir
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtIdKamar.Text = "";
-            txtIdKos.Text = "";
+            cbxKos.Text = "";
             txtFasilitas.Text = "";
             txtHargaSewa.Text = "";
             txtStatus.Text = "";
             txtIdKamar.Enabled = true;
-            txtIdKos.Enabled = true;
+            cbxKos.Enabled = true;
             txtFasilitas.Enabled = true;
             txtHargaSewa.Enabled = true;
+            txtStatus.Enabled = true;
+            Koscbx();
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             btnAdd.Enabled = false;
@@ -60,18 +62,30 @@ namespace Kelompok17BTugasAkhir
         private void btnSave_Click(object sender, EventArgs e)
         {
             idkmr = txtIdKamar.Text;
-            idkk = txtIdKos.Text;
             fasilitas = txtFasilitas.Text;
             hrga = txtHargaSewa.Text;
+            sts = txtStatus.Text;
+            idkk = cbxKos.Text;
+            int hs = 0;
             koneksi.Open();
-            string str = "insert into dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp)" + "values(@idpm, @nmpm, @Al, @nohp)";
+            string strs = "select id_kos from dbo.Kos where nama_kos = @dd";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@dd", idkk));
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                hs = int.Parse(dr["id_kos"].ToString());
+            }
+            dr.Close();
+            string str = "insert into dbo.Kamar (id_kamar, fasilitas, harga_sewa, status, id_kos)" + "values(@idkmr, @Idkk, @Fa, @Hrg, @Status)";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add(new SqlParameter("idpm", idkmr));
-            cmd.Parameters.Add(new SqlParameter("nmpm", idkk));
-            cmd.Parameters.Add(new SqlParameter("AL", fasilitas));
-            cmd.Parameters.Add(new SqlParameter("nohp", hrga));
-            cmd.Parameters.Add(new SqlParameter("nohp", status));
+            cmd.Parameters.Add(new SqlParameter("idkmr", idkmr));
+            cmd.Parameters.Add(new SqlParameter("Fa", fasilitas));
+            cmd.Parameters.Add(new SqlParameter("Hrga", hrga));
+            cmd.Parameters.Add(new SqlParameter("Status", sts));
+            cmd.Parameters.Add(new SqlParameter("Idkk", hs));
             cmd.ExecuteNonQuery();
 
             koneksi.Close();
@@ -84,23 +98,40 @@ namespace Kelompok17BTugasAkhir
         private void FormKamar_Load()
         {
             koneksi.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_pemilik, m.nama_pemilik, "
-            + "m.alamat, m.no_hp From dbo.pemilik m ", koneksi));
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_kamar, m.fasilitas, "
+            + "m.harga, m.status From dbo.Kamar m " +
+            "join dbo.Kos p on m.id_kos = p.id_kos", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
 
             this.customerBindingSource.DataSource = ds.Tables[0];
             this.txtIdKamar.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "id_pemilik", true));
-            this.txtIdKos.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "nama_pemilik", true));
+                new Binding("Text", this.customerBindingSource, "id_kamar", true));
             this.txtFasilitas.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "alamat", true));
+                new Binding("Text", this.customerBindingSource, "fasilitas", true));
             this.txtHargaSewa.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "no_hp", true));
+                new Binding("Text", this.customerBindingSource, "harga", true));
             this.txtStatus.DataBindings.Add(
-                new Binding("Text", this.customerBindingSource, "no_hp", true));
+                new Binding("Text", this.customerBindingSource, "status", true));
+            this.cbxKos.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "nama_kos", true));
             koneksi.Close();
+        }
+
+        private void Koscbx()
+        {
+            koneksi.Open();
+            string str = "select nama_kos from dbo.Kos";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxKos.DisplayMember = "nama_kos";
+            cbxKos.ValueMember = "id_kos";
+            cbxKos.DataSource = ds.Tables[0];
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -111,7 +142,7 @@ namespace Kelompok17BTugasAkhir
         private void clearBinding()
         {
             this.txtIdKamar.DataBindings.Clear();
-            this.txtIdKos.DataBindings.Clear();
+            this.cbxKos.DataBindings.Clear();
             this.txtFasilitas.DataBindings.Clear();
             this.txtHargaSewa.DataBindings.Clear();
             this.txtStatus.DataBindings.Clear();
@@ -120,9 +151,10 @@ namespace Kelompok17BTugasAkhir
         private void refreshform()
         {
             txtIdKamar.Enabled = false;
-            txtIdKos.Enabled = false;
+            cbxKos.Enabled = false;
             txtFasilitas.Enabled = false;
             txtHargaSewa.Enabled = false;
+            txtStatus.Enabled = false;
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
             btnClear.Enabled = false;

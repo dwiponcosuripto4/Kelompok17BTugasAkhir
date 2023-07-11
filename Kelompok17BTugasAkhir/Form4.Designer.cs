@@ -36,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIdKamar = new System.Windows.Forms.TextBox();
-            this.txtIdKos = new System.Windows.Forms.TextBox();
             this.txtFasilitas = new System.Windows.Forms.TextBox();
             this.txtHargaSewa = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cbxKos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnKamar)).BeginInit();
             this.bnKamar.SuspendLayout();
@@ -74,16 +74,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(142, 63);
+            this.label2.Location = new System.Drawing.Point(146, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Id_Kos";
+            this.label2.Text = "Kos";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 92);
+            this.label3.Location = new System.Drawing.Point(142, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 2;
@@ -92,7 +92,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(142, 124);
+            this.label4.Location = new System.Drawing.Point(142, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 3;
@@ -101,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(142, 150);
+            this.label5.Location = new System.Drawing.Point(142, 128);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 4;
@@ -114,30 +114,23 @@
             this.txtIdKamar.Size = new System.Drawing.Size(100, 20);
             this.txtIdKamar.TabIndex = 5;
             // 
-            // txtIdKos
-            // 
-            this.txtIdKos.Location = new System.Drawing.Point(265, 56);
-            this.txtIdKos.Name = "txtIdKos";
-            this.txtIdKos.Size = new System.Drawing.Size(100, 20);
-            this.txtIdKos.TabIndex = 6;
-            // 
             // txtFasilitas
             // 
-            this.txtFasilitas.Location = new System.Drawing.Point(265, 85);
+            this.txtFasilitas.Location = new System.Drawing.Point(265, 63);
             this.txtFasilitas.Name = "txtFasilitas";
             this.txtFasilitas.Size = new System.Drawing.Size(100, 20);
             this.txtFasilitas.TabIndex = 7;
             // 
             // txtHargaSewa
             // 
-            this.txtHargaSewa.Location = new System.Drawing.Point(265, 117);
+            this.txtHargaSewa.Location = new System.Drawing.Point(265, 95);
             this.txtHargaSewa.Name = "txtHargaSewa";
             this.txtHargaSewa.Size = new System.Drawing.Size(100, 20);
             this.txtHargaSewa.TabIndex = 8;
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(265, 153);
+            this.txtStatus.Location = new System.Drawing.Point(265, 131);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(100, 20);
             this.txtStatus.TabIndex = 9;
@@ -305,11 +298,20 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // cbxKos
+            // 
+            this.cbxKos.FormattingEnabled = true;
+            this.cbxKos.Location = new System.Drawing.Point(265, 165);
+            this.cbxKos.Name = "cbxKos";
+            this.cbxKos.Size = new System.Drawing.Size(121, 21);
+            this.cbxKos.TabIndex = 16;
+            // 
             // FormKamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbxKos);
             this.Controls.Add(this.bnKamar);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnClear);
@@ -319,7 +321,6 @@
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtHargaSewa);
             this.Controls.Add(this.txtFasilitas);
-            this.Controls.Add(this.txtIdKos);
             this.Controls.Add(this.txtIdKamar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -346,7 +347,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtIdKamar;
-        private System.Windows.Forms.TextBox txtIdKos;
         private System.Windows.Forms.TextBox txtFasilitas;
         private System.Windows.Forms.TextBox txtHargaSewa;
         private System.Windows.Forms.TextBox txtStatus;
@@ -367,5 +367,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ComboBox cbxKos;
     }
 }
