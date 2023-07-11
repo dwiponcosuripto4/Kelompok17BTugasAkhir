@@ -34,8 +34,9 @@ namespace Kelompok17BTugasAkhir
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            refreshform();
         }
+
 
         private void refreshform()
         {
@@ -75,6 +76,42 @@ namespace Kelompok17BTugasAkhir
             this.dtKeluar.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "nama_kos", true));
             koneksi.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            textidt.Text = "";
+            cbxIdPemilik.Text = "";
+            cbxIdPenyewa.Text = "";
+            txtHarga.Text = "";
+            dtMasuk.Text = "";
+            dtKeluar.Text = "";
+            textidt.Enabled = true;
+            cbxIdPemilik.Enabled = true;
+            cbxIdPenyewa.Enabled = true;
+            txtHarga.Enabled = true;
+            dtMasuk.Enabled = true;
+            dtKeluar.Enabled = true;
+            Pemilikcbx();
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
+        }
+
+        private void Pemilikcbx()
+        {
+            koneksi.Open();
+            string str = "select nama_kos from dbo.Kos";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxIdPemilik.DisplayMember = "nama_kos";
+            cbxIdPemilik.ValueMember = "id_kos";
+            cbxIdPemilik.DataSource = ds.Tables[0];
+
         }
 
         private void clearBinding()
