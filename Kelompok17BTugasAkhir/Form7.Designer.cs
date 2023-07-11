@@ -1,6 +1,6 @@
 ﻿namespace Kelompok17BTugasAkhir
 {
-    partial class Form7
+    partial class FormTransaksi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTransaksi));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -41,17 +41,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textidt = new System.Windows.Forms.TextBox();
             this.bntransaksi = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.cbxIdPenyewa = new System.Windows.Forms.ComboBox();
             this.cbxHarga = new System.Windows.Forms.ComboBox();
             this.cbxIdPemilik = new System.Windows.Forms.ComboBox();
@@ -66,27 +66,30 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(26, 260);
+            this.btnAdd.Location = new System.Drawing.Point(17, 169);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 28);
+            this.btnAdd.Size = new System.Drawing.Size(50, 18);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(435, 260);
+            this.btnClear.Location = new System.Drawing.Point(290, 169);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 28);
+            this.btnClear.Size = new System.Drawing.Size(50, 18);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Hapus";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(598, 260);
+            this.button4.Location = new System.Drawing.Point(399, 169);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 28);
+            this.button4.Size = new System.Drawing.Size(50, 18);
             this.button4.TabIndex = 3;
             this.button4.Text = "exit";
             this.button4.UseVisualStyleBackColor = true;
@@ -94,45 +97,50 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(140, 56);
+            this.label1.Location = new System.Drawing.Point(93, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 20);
+            this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "id_transaksi";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(140, 82);
+            this.label2.Location = new System.Drawing.Point(93, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "id_pemilik";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(140, 114);
+            this.label3.Location = new System.Drawing.Point(93, 74);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 20);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "id_penyewa";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(140, 214);
+            this.label4.Location = new System.Drawing.Point(93, 139);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 20);
+            this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "tanggl_keluar";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(140, 182);
+            this.label5.Location = new System.Drawing.Point(93, 118);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 20);
+            this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "tanggal_masuk";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -140,17 +148,19 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(140, 148);
+            this.label6.Location = new System.Drawing.Point(93, 96);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 20);
+            this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "harga";
             // 
             // textidt
             // 
-            this.textidt.Location = new System.Drawing.Point(260, 50);
+            this.textidt.Location = new System.Drawing.Point(173, 32);
+            this.textidt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textidt.Name = "textidt";
-            this.textidt.Size = new System.Drawing.Size(200, 26);
+            this.textidt.Size = new System.Drawing.Size(135, 20);
             this.textidt.TabIndex = 10;
             // 
             // bntransaksi
@@ -178,9 +188,35 @@
             this.bntransaksi.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bntransaksi.Name = "bntransaksi";
             this.bntransaksi.PositionItem = this.bindingNavigatorPositionItem;
-            this.bntransaksi.Size = new System.Drawing.Size(800, 33);
+            this.bntransaksi.Size = new System.Drawing.Size(533, 31);
             this.bntransaksi.TabIndex = 12;
             this.bntransaksi.Text = "bindingNavigator1";
+            this.bntransaksi.RefreshItems += new System.EventHandler(this.bntransaksi_RefreshItems);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -188,7 +224,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -197,13 +233,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -211,21 +247,14 @@
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 31);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -233,7 +262,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -242,75 +271,63 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // cbxIdPenyewa
             // 
             this.cbxIdPenyewa.FormattingEnabled = true;
-            this.cbxIdPenyewa.Location = new System.Drawing.Point(260, 114);
+            this.cbxIdPenyewa.Location = new System.Drawing.Point(173, 74);
+            this.cbxIdPenyewa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxIdPenyewa.Name = "cbxIdPenyewa";
-            this.cbxIdPenyewa.Size = new System.Drawing.Size(200, 28);
+            this.cbxIdPenyewa.Size = new System.Drawing.Size(135, 21);
             this.cbxIdPenyewa.TabIndex = 13;
             // 
             // cbxHarga
             // 
             this.cbxHarga.FormattingEnabled = true;
-            this.cbxHarga.Location = new System.Drawing.Point(260, 148);
+            this.cbxHarga.Location = new System.Drawing.Point(173, 96);
+            this.cbxHarga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxHarga.Name = "cbxHarga";
-            this.cbxHarga.Size = new System.Drawing.Size(200, 28);
+            this.cbxHarga.Size = new System.Drawing.Size(135, 21);
             this.cbxHarga.TabIndex = 14;
             // 
             // cbxIdPemilik
             // 
             this.cbxIdPemilik.FormattingEnabled = true;
-            this.cbxIdPemilik.Location = new System.Drawing.Point(260, 82);
+            this.cbxIdPemilik.Location = new System.Drawing.Point(173, 53);
+            this.cbxIdPemilik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxIdPemilik.Name = "cbxIdPemilik";
-            this.cbxIdPemilik.Size = new System.Drawing.Size(200, 28);
+            this.cbxIdPemilik.Size = new System.Drawing.Size(135, 21);
             this.cbxIdPemilik.TabIndex = 15;
             // 
             // dtMasuk
             // 
-            this.dtMasuk.Location = new System.Drawing.Point(260, 182);
+            this.dtMasuk.Location = new System.Drawing.Point(173, 118);
+            this.dtMasuk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtMasuk.Name = "dtMasuk";
-            this.dtMasuk.Size = new System.Drawing.Size(200, 26);
+            this.dtMasuk.Size = new System.Drawing.Size(135, 20);
             this.dtMasuk.TabIndex = 16;
             // 
             // dtKeluar
             // 
-            this.dtKeluar.Location = new System.Drawing.Point(260, 214);
+            this.dtKeluar.Location = new System.Drawing.Point(173, 139);
+            this.dtKeluar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtKeluar.Name = "dtKeluar";
-            this.dtKeluar.Size = new System.Drawing.Size(200, 26);
+            this.dtKeluar.Size = new System.Drawing.Size(135, 20);
             this.dtKeluar.TabIndex = 17;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(243, 260);
+            this.btnSave.Location = new System.Drawing.Point(162, 169);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 28);
+            this.btnSave.Size = new System.Drawing.Size(50, 18);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -318,18 +335,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 294);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 191);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(647, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(431, 97);
             this.dataGridView1.TabIndex = 19;
             // 
-            // Form7
+            // FormTransaksi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dtKeluar);
@@ -348,8 +366,10 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
-            this.Name = "Form7";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "FormTransaksi";
             this.Text = "Transaksi";
+            this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bntransaksi)).EndInit();
             this.bntransaksi.ResumeLayout(false);
             this.bntransaksi.PerformLayout();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,20 @@ using System.Windows.Forms;
 
 namespace Kelompok17BTugasAkhir
 {
-    public partial class Form7 : Form
+    public partial class FormTransaksi : Form
     {
-        public Form7()
+        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
+        private SqlConnection koneksi;
+        private string idt, harga, idpm, idp;
+        private DateTime tm, tk;
+        BindingSource customerBindingSource = new BindingSource();
+
+        private void bntransaksi_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        public FormTransaksi()
         {
             InitializeComponent();
         }
@@ -23,6 +35,11 @@ namespace Kelompok17BTugasAkhir
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form7_Load(object sender, EventArgs e)
         {
 
         }
