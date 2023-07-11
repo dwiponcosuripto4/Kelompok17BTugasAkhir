@@ -164,7 +164,7 @@ namespace Kelompok17BTugasAkhir
             string str = "insert into dbo.Transaksi (id_transaksi, id_pemilik, id_penyewa, harga, tanggal_masuk, tanggal_keluar)" + "values(@Idt, @Idpm, @Idp, @Hrg, @Tm, @Tk)";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add(new SqlParameter("idkmr", idt));
+            cmd.Parameters.Add(new SqlParameter("Idt", idt));
             cmd.Parameters.Add(new SqlParameter("Idpm", im));
             cmd.Parameters.Add(new SqlParameter("Idp", ip));
             cmd.Parameters.Add(new SqlParameter("Hrg", harga));
@@ -177,6 +177,11 @@ namespace Kelompok17BTugasAkhir
             MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             refreshform();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void clearBinding()

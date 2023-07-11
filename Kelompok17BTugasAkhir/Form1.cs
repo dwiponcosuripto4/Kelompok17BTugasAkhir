@@ -51,5 +51,11 @@ namespace Kelompok17BTugasAkhir
             Kelompok17BTugasAkhir.admin formPanggil = new Kelompok17BTugasAkhir.admin();
             formPanggil.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Kelompok17BTugasAkhir.FormTransaksi formPanggil = new Kelompok17BTugasAkhir.FormTransaksi();
+            formPanggil.Show();
+        }
     }
 }
