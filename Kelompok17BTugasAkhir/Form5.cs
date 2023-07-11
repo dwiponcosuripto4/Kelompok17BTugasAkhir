@@ -16,7 +16,7 @@ namespace Kelompok17BTugasAkhir
     {
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
-        private string idp, np, alamat, NoHp ;
+        private string idp, np, idk, alamat, NoHp ;
         BindingSource customerBindingSource = new BindingSource();
 
         public FormPenyewa()
@@ -33,12 +33,15 @@ namespace Kelompok17BTugasAkhir
             textnp.Text = "";
             textalamat.Text = "";
             textNoHp.Text = "";
+            cbxKamar.Text = "";
             textidp.Enabled = true;
             textnp.Enabled = true;
             textalamat.Enabled = true;
             textNoHp.Enabled = true;
+            Kamarcbx();
             btnSave.Enabled = true;
             btnClear.Enabled = true;
+            cbxKamar.Enabled = true;
             btnAdd.Enabled = false;
         }
 
@@ -48,14 +51,29 @@ namespace Kelompok17BTugasAkhir
             np = textnp.Text;
             alamat = textalamat.Text;
             NoHp = textNoHp.Text;
+            idk = cbxKamar.Text;
+
+            int hs = 0;
             koneksi.Open();
-            string str = "insert into dbo.Penyewa (id_penyewa, nama_penyewa, alamat, no_hp)" + "values(@idp, @np, @Al, @nohp)";
+            string strs = "select id_kamar from dbo.Kamar where fasilitas = @dd";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@dd", idk));
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                hs = int.Parse(dr["id_kamar"].ToString());
+            }
+            dr.Close();
+
+            string str = "insert into dbo.Penyewa (id_penyewa, nama_penyewa, alamat, no_hp, id_kamar)" + "values(@idp, @np, @Al, @nohp, @kmr)";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SqlParameter("idp", idp));
             cmd.Parameters.Add(new SqlParameter("np", np));
             cmd.Parameters.Add(new SqlParameter("Al", alamat));
             cmd.Parameters.Add(new SqlParameter("nohp", NoHp));
+            cmd.Parameters.Add(new SqlParameter("kmr", idk));
             cmd.ExecuteNonQuery();
 
             koneksi.Close();
@@ -86,7 +104,8 @@ namespace Kelompok17BTugasAkhir
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_penyewa, m.nama_penyewa, "
-            + "m.alamat, m.no_hp From dbo.penyewa m ", koneksi));
+            + "m.alamat, m.no_hp, p.fasilitas From dbo.penyewa m " +
+            "join dbo.Kamar p on m.id_kamar = p.id_kamar", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
 
@@ -99,6 +118,8 @@ namespace Kelompok17BTugasAkhir
                 new Binding("Text", this.customerBindingSource, "alamat", true));
             this.textNoHp.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "no_hp", true));
+            this.textNoHp.DataBindings.Add(
+                new Binding("Text", this.customerBindingSource, "fasilitas", true));
             koneksi.Close();
         }
 
@@ -108,6 +129,7 @@ namespace Kelompok17BTugasAkhir
             this.textnp.DataBindings.Clear();
             this.textalamat.DataBindings.Clear();
             this.textNoHp.DataBindings.Clear();
+            this.cbxKamar.DataBindings.Clear();
         }
 
         private void refreshform()
@@ -116,11 +138,28 @@ namespace Kelompok17BTugasAkhir
             textnp.Enabled = false;
             textalamat.Enabled = false;
             textNoHp.Enabled = false;
+            cbxKamar.Enabled = false;
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
             clearBinding();
             FormPenyewa_Load();
+        }
+
+        private void Kamarcbx()
+        {
+            koneksi.Open();
+            string str = "select fasilitas from dbo.Kamar";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxKamar.DisplayMember = "fasilitas";
+            cbxKamar.ValueMember = "id_kamar";
+            cbxKamar.DataSource = ds.Tables[0];
+
         }
     }
 }
