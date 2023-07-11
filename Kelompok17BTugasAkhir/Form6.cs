@@ -14,7 +14,7 @@ namespace Kelompok17BTugasAkhir
 {
     public partial class admin : Form
     {
-        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
+        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos2;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
         private string ida, nma, nohp, usern, pssw;
         BindingSource customerBindingSource = new BindingSource();
@@ -70,6 +70,8 @@ namespace Kelompok17BTugasAkhir
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kos2DataSet.Admin' table. You can move, or remove it, as needed.
+            this.adminTableAdapter1.Fill(this.kos2DataSet.Admin);
             // TODO: This line of code loads data into the 'kosDataSet.Admin' table. You can move, or remove it, as needed.
             this.adminTableAdapter.Fill(this.kosDataSet.Admin);
 

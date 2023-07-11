@@ -13,7 +13,7 @@ namespace Kelompok17BTugasAkhir
 {
     public partial class FormPemilikKos : Form
     {
-        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
+        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos2;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
         private string idpm, namapm, alamat, nohp;
         BindingSource customerBindingSource = new BindingSource();
@@ -45,6 +45,8 @@ namespace Kelompok17BTugasAkhir
         }
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kos2DataSet.Pemilik' table. You can move, or remove it, as needed.
+            this.pemilikTableAdapter1.Fill(this.kos2DataSet.Pemilik);
             // TODO: This line of code loads data into the 'kosDataSet.Pemilik' table. You can move, or remove it, as needed.
             this.pemilikTableAdapter.Fill(this.kosDataSet.Pemilik);
 

@@ -13,7 +13,7 @@ namespace Kelompok17BTugasAkhir
 {
     public partial class FormTransaksi : Form
     {
-        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
+        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos2;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
         private string idt, harga, idpm, idp;
         private DateTime tm, tk;
@@ -207,6 +207,12 @@ namespace Kelompok17BTugasAkhir
 
         private void Form7_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kos2DataSet2.Transaksi' table. You can move, or remove it, as needed.
+            this.transaksiTableAdapter5.Fill(this.kos2DataSet2.Transaksi);
+            // TODO: This line of code loads data into the 'kosDataSet3.Transaksi' table. You can move, or remove it, as needed.
+            this.transaksiTableAdapter2.Fill(this.kosDataSet3.Transaksi);
+            // TODO: This line of code loads data into the 'kosDataSet2.Transaksi' table. You can move, or remove it, as needed.
+            this.transaksiTableAdapter1.Fill(this.kosDataSet2.Transaksi);
 
         }
     }

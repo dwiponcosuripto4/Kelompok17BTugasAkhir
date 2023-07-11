@@ -40,11 +40,6 @@
             this.textuser = new System.Windows.Forms.TextBox();
             this.textpsw = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,19 +60,32 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.adminTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.AdminTableAdapter();
+            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
+            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.adminBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.adminTableAdapter1 = new Kelompok17BTugasAkhir.Kos2DataSetTableAdapters.AdminTableAdapter();
+            this.idadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnadmin)).BeginInit();
             this.bnadmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(13, 283);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Location = new System.Drawing.Point(9, 184);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(112, 35);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -85,10 +93,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(242, 283);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(161, 184);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 35);
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -96,10 +103,9 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(485, 283);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClear.Location = new System.Drawing.Point(323, 184);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(112, 35);
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Hapus";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -107,10 +113,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(719, 283);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(479, 184);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 35);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
@@ -118,42 +123,37 @@
             // 
             // textida
             // 
-            this.textida.Location = new System.Drawing.Point(1039, 44);
-            this.textida.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textida.Location = new System.Drawing.Point(693, 29);
             this.textida.Name = "textida";
-            this.textida.Size = new System.Drawing.Size(148, 26);
+            this.textida.Size = new System.Drawing.Size(100, 20);
             this.textida.TabIndex = 5;
             // 
             // textnma
             // 
-            this.textnma.Location = new System.Drawing.Point(1039, 80);
-            this.textnma.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textnma.Location = new System.Drawing.Point(693, 52);
             this.textnma.Name = "textnma";
-            this.textnma.Size = new System.Drawing.Size(148, 26);
+            this.textnma.Size = new System.Drawing.Size(100, 20);
             this.textnma.TabIndex = 6;
             // 
             // textnohp
             // 
-            this.textnohp.Location = new System.Drawing.Point(1039, 116);
-            this.textnohp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textnohp.Location = new System.Drawing.Point(693, 75);
             this.textnohp.Name = "textnohp";
-            this.textnohp.Size = new System.Drawing.Size(148, 26);
+            this.textnohp.Size = new System.Drawing.Size(100, 20);
             this.textnohp.TabIndex = 7;
             // 
             // textuser
             // 
-            this.textuser.Location = new System.Drawing.Point(1039, 152);
-            this.textuser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textuser.Location = new System.Drawing.Point(693, 99);
             this.textuser.Name = "textuser";
-            this.textuser.Size = new System.Drawing.Size(148, 26);
+            this.textuser.Size = new System.Drawing.Size(100, 20);
             this.textuser.TabIndex = 8;
             // 
             // textpsw
             // 
-            this.textpsw.Location = new System.Drawing.Point(1039, 188);
-            this.textpsw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textpsw.Location = new System.Drawing.Point(693, 122);
             this.textpsw.Name = "textpsw";
-            this.textpsw.Size = new System.Drawing.Size(148, 26);
+            this.textpsw.Size = new System.Drawing.Size(100, 20);
             this.textpsw.TabIndex = 9;
             // 
             // dataGridView1
@@ -166,53 +166,12 @@
             this.nohpDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.adminBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 52);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.DataSource = this.adminBindingSource2;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 34);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(818, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(545, 105);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // idadminDataGridViewTextBoxColumn
-            // 
-            this.idadminDataGridViewTextBoxColumn.DataPropertyName = "id_admin";
-            this.idadminDataGridViewTextBoxColumn.HeaderText = "id_admin";
-            this.idadminDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idadminDataGridViewTextBoxColumn.Name = "idadminDataGridViewTextBoxColumn";
-            this.idadminDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // namaadminDataGridViewTextBoxColumn
-            // 
-            this.namaadminDataGridViewTextBoxColumn.DataPropertyName = "nama_admin";
-            this.namaadminDataGridViewTextBoxColumn.HeaderText = "nama_admin";
-            this.namaadminDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.namaadminDataGridViewTextBoxColumn.Name = "namaadminDataGridViewTextBoxColumn";
-            this.namaadminDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nohpDataGridViewTextBoxColumn
-            // 
-            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
-            this.nohpDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Width = 150;
             // 
             // adminBindingSource
             // 
@@ -227,50 +186,45 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(881, 44);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(587, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Id_Admin";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(881, 80);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(587, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Nama Admin";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(881, 116);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(587, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "No Hp";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(881, 152);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(587, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Username";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(881, 188);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(587, 122);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 20);
+            this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Passwword";
             // 
@@ -298,9 +252,9 @@
             this.bnadmin.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bnadmin.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnadmin.Name = "bnadmin";
-            this.bnadmin.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.bnadmin.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bnadmin.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnadmin.Size = new System.Drawing.Size(1200, 33);
+            this.bnadmin.Size = new System.Drawing.Size(800, 31);
             this.bnadmin.TabIndex = 16;
             this.bnadmin.Text = "bindingNavigator1";
             // 
@@ -310,13 +264,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -326,7 +280,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -335,7 +289,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -344,13 +298,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -358,14 +312,14 @@
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 31);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -373,7 +327,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -382,23 +336,77 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // adminTableAdapter
             // 
             this.adminTableAdapter.ClearBeforeFill = true;
             // 
+            // kos2DataSet
+            // 
+            this.kos2DataSet.DataSetName = "Kos2DataSet";
+            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kos2DataSetBindingSource
+            // 
+            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
+            this.kos2DataSetBindingSource.Position = 0;
+            // 
+            // adminBindingSource1
+            // 
+            this.adminBindingSource1.DataMember = "Admin";
+            this.adminBindingSource1.DataSource = this.kos2DataSetBindingSource;
+            // 
+            // adminTableAdapter1
+            // 
+            this.adminTableAdapter1.ClearBeforeFill = true;
+            // 
+            // idadminDataGridViewTextBoxColumn
+            // 
+            this.idadminDataGridViewTextBoxColumn.DataPropertyName = "id_admin";
+            this.idadminDataGridViewTextBoxColumn.HeaderText = "id_admin";
+            this.idadminDataGridViewTextBoxColumn.Name = "idadminDataGridViewTextBoxColumn";
+            // 
+            // namaadminDataGridViewTextBoxColumn
+            // 
+            this.namaadminDataGridViewTextBoxColumn.DataPropertyName = "nama_admin";
+            this.namaadminDataGridViewTextBoxColumn.HeaderText = "nama_admin";
+            this.namaadminDataGridViewTextBoxColumn.Name = "namaadminDataGridViewTextBoxColumn";
+            // 
+            // nohpDataGridViewTextBoxColumn
+            // 
+            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // adminBindingSource2
+            // 
+            this.adminBindingSource2.DataMember = "Admin";
+            this.adminBindingSource2.DataSource = this.kos2DataSetBindingSource;
+            // 
             // admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 377);
+            this.ClientSize = new System.Drawing.Size(800, 245);
             this.Controls.Add(this.bnadmin);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -415,7 +423,6 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "admin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Form6_Load);
@@ -425,6 +432,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnadmin)).EndInit();
             this.bnadmin.ResumeLayout(false);
             this.bnadmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,10 +473,15 @@
         private KosDataSet kosDataSet;
         private System.Windows.Forms.BindingSource adminBindingSource;
         private KosDataSetTableAdapters.AdminTableAdapter adminTableAdapter;
+        private System.Windows.Forms.BindingSource kos2DataSetBindingSource;
+        private Kos2DataSet kos2DataSet;
+        private System.Windows.Forms.BindingSource adminBindingSource1;
+        private Kos2DataSetTableAdapters.AdminTableAdapter adminTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idadminDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn namaadminDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nohpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource adminBindingSource2;
     }
 }

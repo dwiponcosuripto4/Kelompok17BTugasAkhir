@@ -14,7 +14,7 @@ namespace Kelompok17BTugasAkhir
 {
     public partial class FormPenyewa : Form
     {
-        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
+        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos2;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
         private string idp, np, idk, alamat, NoHp ;
         BindingSource customerBindingSource = new BindingSource();
@@ -73,7 +73,7 @@ namespace Kelompok17BTugasAkhir
             cmd.Parameters.Add(new SqlParameter("np", np));
             cmd.Parameters.Add(new SqlParameter("Al", alamat));
             cmd.Parameters.Add(new SqlParameter("nohp", NoHp));
-            cmd.Parameters.Add(new SqlParameter("kmr", idk));
+            cmd.Parameters.Add(new SqlParameter("kmr", hs));
             cmd.ExecuteNonQuery();
 
             koneksi.Close();
@@ -95,6 +95,8 @@ namespace Kelompok17BTugasAkhir
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kos2DataSet.Penyewa' table. You can move, or remove it, as needed.
+            this.penyewaTableAdapter1.Fill(this.kos2DataSet.Penyewa);
             // TODO: This line of code loads data into the 'kosDataSet.Penyewa' table. You can move, or remove it, as needed.
             this.penyewaTableAdapter.Fill(this.kosDataSet.Penyewa);
 
@@ -118,7 +120,7 @@ namespace Kelompok17BTugasAkhir
                 new Binding("Text", this.customerBindingSource, "alamat", true));
             this.textNoHp.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "no_hp", true));
-            this.textNoHp.DataBindings.Add(
+            this.cbxKamar.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "fasilitas", true));
             koneksi.Close();
         }

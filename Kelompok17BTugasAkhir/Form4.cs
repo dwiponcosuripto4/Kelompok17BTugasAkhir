@@ -13,13 +13,15 @@ namespace Kelompok17BTugasAkhir
 {
     public partial class FormKamar : Form
     {
-        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos;User ID=sa; Password=xm11tpro";
+        private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos2;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
         private string idkmr, idkk, fasilitas, hrga, sts;
         BindingSource customerBindingSource = new BindingSource();
 
         private void FormKamar_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kos2DataSet.Kamar' table. You can move, or remove it, as needed.
+            this.kamarTableAdapter2.Fill(this.kos2DataSet.Kamar);
             // TODO: This line of code loads data into the 'kosDataSet1.Kamar' table. You can move, or remove it, as needed.
             this.kamarTableAdapter1.Fill(this.kosDataSet1.Kamar);
             // TODO: This line of code loads data into the 'kosDataSet.Penyewa' table. You can move, or remove it, as needed.

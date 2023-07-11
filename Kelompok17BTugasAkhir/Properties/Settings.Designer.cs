@@ -33,5 +33,27 @@ namespace Kelompok17BTugasAkhir.Properties {
                 return ((string)(this["KosConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-9OD41I73\\DWIPONCOS;Initial Catalog=Kos;User ID=sa;Password=xm1" +
+            "1tpro")]
+        public string KosConnectionString1 {
+            get {
+                return ((string)(this["KosConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-9OD41I73\\DWIPONCOS;Initial Catalog=Kos2;Integrated Security=Tr" +
+            "ue")]
+        public string Kos2ConnectionString {
+            get {
+                return ((string)(this["Kos2ConnectionString"]));
+            }
+        }
     }
 }
