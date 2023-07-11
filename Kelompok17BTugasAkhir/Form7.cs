@@ -93,6 +93,7 @@ namespace Kelompok17BTugasAkhir
             dtMasuk.Enabled = true;
             dtKeluar.Enabled = true;
             Pemilikcbx();
+            Penyewacbx();
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             btnAdd.Enabled = false;
@@ -111,6 +112,22 @@ namespace Kelompok17BTugasAkhir
             cbxIdPemilik.DisplayMember = "nama_kos";
             cbxIdPemilik.ValueMember = "id_kos";
             cbxIdPemilik.DataSource = ds.Tables[0];
+
+        }
+
+        private void Penyewacbx()
+        {
+            koneksi.Open();
+            string str = "select nama_kos from dbo.Kos";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxIdPenyewa.DisplayMember = "nama_kos";
+            cbxIdPenyewa.ValueMember = "id_kos";
+            cbxIdPenyewa.DataSource = ds.Tables[0];
 
         }
 
