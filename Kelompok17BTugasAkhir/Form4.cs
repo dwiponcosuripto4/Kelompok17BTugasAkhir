@@ -78,12 +78,12 @@ namespace Kelompok17BTugasAkhir
                 hs = int.Parse(dr["id_kos"].ToString());
             }
             dr.Close();
-            string str = "insert into dbo.Kamar (id_kamar, fasilitas, harga_sewa, status, id_kos)" + "values(@idkmr, @Idkk, @Fa, @Hrg, @Status)";
+            string str = "insert into dbo.Kamar (id_kamar, fasilitas, harga, status, id_kos)" + "values(@idkmr, @Fa, @Hrg, @Status, @Idkk)";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SqlParameter("idkmr", idkmr));
             cmd.Parameters.Add(new SqlParameter("Fa", fasilitas));
-            cmd.Parameters.Add(new SqlParameter("Hrga", hrga));
+            cmd.Parameters.Add(new SqlParameter("Hrg", hrga));
             cmd.Parameters.Add(new SqlParameter("Status", sts));
             cmd.Parameters.Add(new SqlParameter("Idkk", hs));
             cmd.ExecuteNonQuery();
