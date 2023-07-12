@@ -47,6 +47,16 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idkosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namakosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kapasitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
             this.kosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
             this.bnKos = new System.Windows.Forms.BindingNavigator(this.components);
@@ -64,31 +74,21 @@
             this.kosTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.KosTableAdapter();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxPemilik = new System.Windows.Forms.ComboBox();
-            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
-            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.kosTableAdapter1 = new Kelompok17BTugasAkhir.Kos2DataSetTableAdapters.KosTableAdapter();
-            this.idkosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namakosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kapasitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnKos)).BeginInit();
             this.bnKos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(241, 283);
+            this.label1.Location = new System.Drawing.Point(851, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
@@ -98,7 +98,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 334);
+            this.label2.Location = new System.Drawing.Point(851, 126);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
@@ -108,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 357);
+            this.label3.Location = new System.Drawing.Point(851, 149);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
@@ -118,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 381);
+            this.label4.Location = new System.Drawing.Point(851, 173);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
@@ -129,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(241, 404);
+            this.label5.Location = new System.Drawing.Point(851, 196);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
@@ -139,7 +139,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(241, 426);
+            this.label6.Location = new System.Drawing.Point(851, 218);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
@@ -148,7 +148,7 @@
             // 
             // textidkk
             // 
-            this.textidkk.Location = new System.Drawing.Point(356, 280);
+            this.textidkk.Location = new System.Drawing.Point(966, 72);
             this.textidkk.Margin = new System.Windows.Forms.Padding(2);
             this.textidkk.Name = "textidkk";
             this.textidkk.Size = new System.Drawing.Size(121, 20);
@@ -156,7 +156,7 @@
             // 
             // textNK
             // 
-            this.textNK.Location = new System.Drawing.Point(356, 331);
+            this.textNK.Location = new System.Drawing.Point(966, 123);
             this.textNK.Margin = new System.Windows.Forms.Padding(2);
             this.textNK.Name = "textNK";
             this.textNK.Size = new System.Drawing.Size(121, 20);
@@ -164,7 +164,7 @@
             // 
             // textAlamat
             // 
-            this.textAlamat.Location = new System.Drawing.Point(356, 354);
+            this.textAlamat.Location = new System.Drawing.Point(966, 146);
             this.textAlamat.Margin = new System.Windows.Forms.Padding(2);
             this.textAlamat.Name = "textAlamat";
             this.textAlamat.Size = new System.Drawing.Size(121, 20);
@@ -172,7 +172,7 @@
             // 
             // textNoHp
             // 
-            this.textNoHp.Location = new System.Drawing.Point(356, 378);
+            this.textNoHp.Location = new System.Drawing.Point(966, 170);
             this.textNoHp.Margin = new System.Windows.Forms.Padding(2);
             this.textNoHp.Name = "textNoHp";
             this.textNoHp.Size = new System.Drawing.Size(121, 20);
@@ -180,7 +180,7 @@
             // 
             // textKK
             // 
-            this.textKK.Location = new System.Drawing.Point(356, 401);
+            this.textKK.Location = new System.Drawing.Point(966, 193);
             this.textKK.Margin = new System.Windows.Forms.Padding(2);
             this.textKK.Name = "textKK";
             this.textKK.Size = new System.Drawing.Size(121, 20);
@@ -188,7 +188,7 @@
             // 
             // textHS
             // 
-            this.textHS.Location = new System.Drawing.Point(356, 423);
+            this.textHS.Location = new System.Drawing.Point(966, 215);
             this.textHS.Margin = new System.Windows.Forms.Padding(2);
             this.textHS.Name = "textHS";
             this.textHS.Size = new System.Drawing.Size(121, 20);
@@ -196,7 +196,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(578, 349);
+            this.btnAdd.Location = new System.Drawing.Point(76, 340);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(50, 21);
@@ -207,7 +207,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(705, 349);
+            this.btnSave.Location = new System.Drawing.Point(231, 340);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(50, 21);
@@ -218,7 +218,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(847, 349);
+            this.btnClear.Location = new System.Drawing.Point(387, 340);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(50, 21);
@@ -229,7 +229,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(971, 349);
+            this.button4.Location = new System.Drawing.Point(568, 340);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 21);
@@ -256,8 +256,65 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1112, 209);
+            this.dataGridView1.Size = new System.Drawing.Size(765, 209);
             this.dataGridView1.TabIndex = 16;
+            // 
+            // idkosDataGridViewTextBoxColumn
+            // 
+            this.idkosDataGridViewTextBoxColumn.DataPropertyName = "id_kos";
+            this.idkosDataGridViewTextBoxColumn.HeaderText = "id_kos";
+            this.idkosDataGridViewTextBoxColumn.Name = "idkosDataGridViewTextBoxColumn";
+            // 
+            // idpemilikDataGridViewTextBoxColumn
+            // 
+            this.idpemilikDataGridViewTextBoxColumn.DataPropertyName = "id_pemilik";
+            this.idpemilikDataGridViewTextBoxColumn.HeaderText = "id_pemilik";
+            this.idpemilikDataGridViewTextBoxColumn.Name = "idpemilikDataGridViewTextBoxColumn";
+            // 
+            // namakosDataGridViewTextBoxColumn
+            // 
+            this.namakosDataGridViewTextBoxColumn.DataPropertyName = "nama_kos";
+            this.namakosDataGridViewTextBoxColumn.HeaderText = "nama_kos";
+            this.namakosDataGridViewTextBoxColumn.Name = "namakosDataGridViewTextBoxColumn";
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            // 
+            // nohpDataGridViewTextBoxColumn
+            // 
+            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            // 
+            // kapasitasDataGridViewTextBoxColumn
+            // 
+            this.kapasitasDataGridViewTextBoxColumn.DataPropertyName = "kapasitas";
+            this.kapasitasDataGridViewTextBoxColumn.HeaderText = "kapasitas";
+            this.kapasitasDataGridViewTextBoxColumn.Name = "kapasitasDataGridViewTextBoxColumn";
+            // 
+            // hargaDataGridViewTextBoxColumn
+            // 
+            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "harga";
+            this.hargaDataGridViewTextBoxColumn.HeaderText = "harga";
+            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+            // 
+            // kosBindingSource1
+            // 
+            this.kosBindingSource1.DataMember = "Kos";
+            this.kosBindingSource1.DataSource = this.kos2DataSetBindingSource;
+            // 
+            // kos2DataSetBindingSource
+            // 
+            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
+            this.kos2DataSetBindingSource.Position = 0;
+            // 
+            // kos2DataSet
+            // 
+            this.kos2DataSet.DataSetName = "Kos2DataSet";
+            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kosBindingSource
             // 
@@ -295,7 +352,7 @@
             this.bnKos.Name = "bnKos";
             this.bnKos.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bnKos.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnKos.Size = new System.Drawing.Size(1124, 31);
+            this.bnKos.Size = new System.Drawing.Size(1145, 31);
             this.bnKos.TabIndex = 17;
             this.bnKos.Text = "bindingNavigator1";
             this.bnKos.RefreshItems += new System.EventHandler(this.bnKos_RefreshItems);
@@ -393,7 +450,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(241, 309);
+            this.label7.Location = new System.Drawing.Point(851, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 18;
@@ -402,77 +459,20 @@
             // cbxPemilik
             // 
             this.cbxPemilik.FormattingEnabled = true;
-            this.cbxPemilik.Location = new System.Drawing.Point(356, 305);
+            this.cbxPemilik.Location = new System.Drawing.Point(966, 97);
             this.cbxPemilik.Name = "cbxPemilik";
             this.cbxPemilik.Size = new System.Drawing.Size(121, 21);
             this.cbxPemilik.TabIndex = 19;
-            // 
-            // kos2DataSet
-            // 
-            this.kos2DataSet.DataSetName = "Kos2DataSet";
-            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kos2DataSetBindingSource
-            // 
-            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
-            this.kos2DataSetBindingSource.Position = 0;
-            // 
-            // kosBindingSource1
-            // 
-            this.kosBindingSource1.DataMember = "Kos";
-            this.kosBindingSource1.DataSource = this.kos2DataSetBindingSource;
             // 
             // kosTableAdapter1
             // 
             this.kosTableAdapter1.ClearBeforeFill = true;
             // 
-            // idkosDataGridViewTextBoxColumn
-            // 
-            this.idkosDataGridViewTextBoxColumn.DataPropertyName = "id_kos";
-            this.idkosDataGridViewTextBoxColumn.HeaderText = "id_kos";
-            this.idkosDataGridViewTextBoxColumn.Name = "idkosDataGridViewTextBoxColumn";
-            // 
-            // idpemilikDataGridViewTextBoxColumn
-            // 
-            this.idpemilikDataGridViewTextBoxColumn.DataPropertyName = "id_pemilik";
-            this.idpemilikDataGridViewTextBoxColumn.HeaderText = "id_pemilik";
-            this.idpemilikDataGridViewTextBoxColumn.Name = "idpemilikDataGridViewTextBoxColumn";
-            // 
-            // namakosDataGridViewTextBoxColumn
-            // 
-            this.namakosDataGridViewTextBoxColumn.DataPropertyName = "nama_kos";
-            this.namakosDataGridViewTextBoxColumn.HeaderText = "nama_kos";
-            this.namakosDataGridViewTextBoxColumn.Name = "namakosDataGridViewTextBoxColumn";
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
-            // 
-            // nohpDataGridViewTextBoxColumn
-            // 
-            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
-            // 
-            // kapasitasDataGridViewTextBoxColumn
-            // 
-            this.kapasitasDataGridViewTextBoxColumn.DataPropertyName = "kapasitas";
-            this.kapasitasDataGridViewTextBoxColumn.HeaderText = "kapasitas";
-            this.kapasitasDataGridViewTextBoxColumn.Name = "kapasitasDataGridViewTextBoxColumn";
-            // 
-            // hargaDataGridViewTextBoxColumn
-            // 
-            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "harga";
-            this.hargaDataGridViewTextBoxColumn.HeaderText = "harga";
-            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
-            // 
             // KosKosan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 490);
+            this.ClientSize = new System.Drawing.Size(1145, 490);
             this.Controls.Add(this.cbxPemilik);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.bnKos);
@@ -498,14 +498,14 @@
             this.Text = "Kos-Kosan";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnKos)).EndInit();
             this.bnKos.ResumeLayout(false);
             this.bnKos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kosBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

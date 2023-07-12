@@ -53,7 +53,7 @@ namespace Kelompok17BTugasAkhir
             NoHp = textNoHp.Text;
             idk = cbxKamar.Text;
 
-            int hs = 0;
+            string hs = string.Empty;
             koneksi.Open();
             string strs = "select id_kamar from dbo.Kamar where fasilitas = @dd";
             SqlCommand cm = new SqlCommand(strs, koneksi);
@@ -62,7 +62,7 @@ namespace Kelompok17BTugasAkhir
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                hs = int.Parse(dr["id_kamar"].ToString());
+                hs = dr["id_kamar"].ToString();
             }
             dr.Close();
 

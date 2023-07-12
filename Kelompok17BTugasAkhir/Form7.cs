@@ -140,7 +140,7 @@ namespace Kelompok17BTugasAkhir
             harga = txtHarga.Text;
             tm = dtMasuk.Value;
             tk = dtKeluar.Value;
-            int im = 0, ip = 0;
+            string im = string.Empty, ip = string.Empty;
             koneksi.Open();
             string strs = "select id_pemilik from dbo.Pemilik where nama_pemilik = @dd";
             SqlCommand cm = new SqlCommand(strs, koneksi);
@@ -149,7 +149,7 @@ namespace Kelompok17BTugasAkhir
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                im = int.Parse(dr["id_pemilik"].ToString());
+                im = dr["id_pemilik"].ToString();
             }
             dr.Close();
             string strs2 = "SELECT id_penyewa FROM dbo.Penyewa WHERE nama_penyewa = @dd";
@@ -159,7 +159,7 @@ namespace Kelompok17BTugasAkhir
             SqlDataReader dr2 = cm2.ExecuteReader();
             while (dr2.Read())
             {
-                ip = int.Parse(dr2["id_penyewa"].ToString());
+                ip = dr2["id_penyewa"].ToString();
             }
             dr2.Close();
             string str = "insert into dbo.Transaksi (id_transaksi, id_pemilik, id_penyewa, harga, tanggal_masuk, tanggal_keluar)" + "values(@Idt, @Idpm, @Idp, @Hrg, @Tm, @Tk)";

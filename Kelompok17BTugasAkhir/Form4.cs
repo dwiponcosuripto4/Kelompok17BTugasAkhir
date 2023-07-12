@@ -72,7 +72,7 @@ namespace Kelompok17BTugasAkhir
             hrga = txtHargaSewa.Text;
             sts = txtStatus.Text;
             idkk = cbxKos.Text;
-            int hs = 0;
+            string hs = string.Empty;
             koneksi.Open();
             string strs = "select id_kos from dbo.Kos where nama_kos = @dd";
             SqlCommand cm = new SqlCommand(strs, koneksi);
@@ -81,7 +81,7 @@ namespace Kelompok17BTugasAkhir
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                hs = int.Parse(dr["id_kos"].ToString());
+                hs = dr["id_kos"].ToString();
             }
             dr.Close();
             string str = "insert into dbo.Kamar (id_kamar, fasilitas, harga, status, id_kos)" + "values(@idkmr, @Fa, @Hrg, @Status, @Idkk)";

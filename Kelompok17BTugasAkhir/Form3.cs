@@ -71,7 +71,7 @@ namespace Kelompok17BTugasAkhir
             nohp = textNoHp.Text;
             kapsk = textKK.Text;
             hs = textHS.Text;
-            int pm = 0;
+            string pm = string.Empty;   
             koneksi.Open();
             string strs = "select id_pemilik from dbo.Pemilik where nama_pemilik = @dd";
             SqlCommand cm = new SqlCommand(strs, koneksi);
@@ -80,7 +80,7 @@ namespace Kelompok17BTugasAkhir
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read()) 
             {
-                pm = int.Parse(dr["id_pemilik"].ToString());
+                pm = dr["id_pemilik"].ToString();
             }
             dr.Close();
             string str = "insert into dbo.Kos (id_kos, id_pemilik, nama_kos, alamat, no_hp, kapasitas, harga)" + "values(@idk, @Pm, @nk, @Al, @nohp, @kaps, @hrs)";
