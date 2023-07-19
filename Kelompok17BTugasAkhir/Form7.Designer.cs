@@ -78,22 +78,28 @@
             this.transaksiBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiTableAdapter4 = new Kelompok17BTugasAkhir.Kos2DataSet1TableAdapters.TransaksiTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.transaksiBindingSource12 = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSet2 = new Kelompok17BTugasAkhir.Kos2DataSet2();
             this.kos2DataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiBindingSource8 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiBindingSource9 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiBindingSource10 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiBindingSource11 = new System.Windows.Forms.BindingSource(this.components);
-            this.kos2DataSet2 = new Kelompok17BTugasAkhir.Kos2DataSet2();
-            this.kos2DataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transaksiBindingSource12 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiTableAdapter5 = new Kelompok17BTugasAkhir.Kos2DataSet2TableAdapters.TransaksiTableAdapter();
+            this.kos2fix = new Kelompok17BTugasAkhir.Kos2fix();
+            this.kos2fixBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transaksiBindingSource13 = new System.Windows.Forms.BindingSource(this.components);
+            this.transaksiTableAdapter6 = new Kelompok17BTugasAkhir.Kos2fixTableAdapters.TransaksiTableAdapter();
             this.idtransaksiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idpenyewaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tanggalmasukDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tanggalkeluarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bntransaksi)).BeginInit();
             this.bntransaksi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
@@ -110,15 +116,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fix)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource13)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -139,7 +148,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(50, 18);
             this.btnClear.TabIndex = 2;
-            this.btnClear.Text = "Hapus";
+            this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -494,11 +503,26 @@
             this.tanggalmasukDataGridViewTextBoxColumn,
             this.tanggalkeluarDataGridViewTextBoxColumn,
             this.hargaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.transaksiBindingSource12;
+            this.dataGridView1.DataSource = this.transaksiBindingSource13;
             this.dataGridView1.Location = new System.Drawing.Point(12, 36);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(590, 149);
             this.dataGridView1.TabIndex = 21;
+            // 
+            // transaksiBindingSource12
+            // 
+            this.transaksiBindingSource12.DataMember = "Transaksi";
+            this.transaksiBindingSource12.DataSource = this.kos2DataSet2BindingSource;
+            // 
+            // kos2DataSet2BindingSource
+            // 
+            this.kos2DataSet2BindingSource.DataSource = this.kos2DataSet2;
+            this.kos2DataSet2BindingSource.Position = 0;
+            // 
+            // kos2DataSet2
+            // 
+            this.kos2DataSet2.DataSetName = "Kos2DataSet2";
+            this.kos2DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kos2DataSet1BindingSource
             // 
@@ -530,24 +554,28 @@
             this.transaksiBindingSource11.DataMember = "Transaksi";
             this.transaksiBindingSource11.DataSource = this.kos2DataSet1BindingSource;
             // 
-            // kos2DataSet2
-            // 
-            this.kos2DataSet2.DataSetName = "Kos2DataSet2";
-            this.kos2DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kos2DataSet2BindingSource
-            // 
-            this.kos2DataSet2BindingSource.DataSource = this.kos2DataSet2;
-            this.kos2DataSet2BindingSource.Position = 0;
-            // 
-            // transaksiBindingSource12
-            // 
-            this.transaksiBindingSource12.DataMember = "Transaksi";
-            this.transaksiBindingSource12.DataSource = this.kos2DataSet2BindingSource;
-            // 
             // transaksiTableAdapter5
             // 
             this.transaksiTableAdapter5.ClearBeforeFill = true;
+            // 
+            // kos2fix
+            // 
+            this.kos2fix.DataSetName = "Kos2fix";
+            this.kos2fix.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kos2fixBindingSource
+            // 
+            this.kos2fixBindingSource.DataSource = this.kos2fix;
+            this.kos2fixBindingSource.Position = 0;
+            // 
+            // transaksiBindingSource13
+            // 
+            this.transaksiBindingSource13.DataMember = "Transaksi";
+            this.transaksiBindingSource13.DataSource = this.kos2fixBindingSource;
+            // 
+            // transaksiTableAdapter6
+            // 
+            this.transaksiTableAdapter6.ClearBeforeFill = true;
             // 
             // idtransaksiDataGridViewTextBoxColumn
             // 
@@ -585,11 +613,33 @@
             this.hargaDataGridViewTextBoxColumn.HeaderText = "harga";
             this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(264, 234);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 22;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(493, 233);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 23;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // FormTransaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 292);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtHarga);
             this.Controls.Add(this.btnSave);
@@ -629,15 +679,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fix)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -703,11 +756,17 @@
         private Kos2DataSet2 kos2DataSet2;
         private System.Windows.Forms.BindingSource transaksiBindingSource12;
         private Kos2DataSet2TableAdapters.TransaksiTableAdapter transaksiTableAdapter5;
+        private System.Windows.Forms.BindingSource kos2fixBindingSource;
+        private Kos2fix kos2fix;
+        private System.Windows.Forms.BindingSource transaksiBindingSource13;
+        private Kos2fixTableAdapters.TransaksiTableAdapter transaksiTableAdapter6;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtransaksiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpemilikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpenyewaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalmasukDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalkeluarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

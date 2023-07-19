@@ -43,6 +43,14 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idpenyewaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namapenyewaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idkamarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.penyewaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
             this.penyewaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
             this.bnpenyewa = new System.Windows.Forms.BindingNavigator(this.components);
@@ -60,23 +68,17 @@
             this.penyewaTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.PenyewaTableAdapter();
             this.cbxKamar = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
-            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.penyewaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.penyewaTableAdapter1 = new Kelompok17BTugasAkhir.Kos2DataSetTableAdapters.PenyewaTableAdapter();
-            this.idpenyewaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namapenyewaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idkamarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.penyewaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.penyewaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnpenyewa)).BeginInit();
             this.bnpenyewa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.penyewaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +124,7 @@
             // textidp
             // 
             this.textidp.Location = new System.Drawing.Point(679, 31);
-            this.textidp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textidp.Margin = new System.Windows.Forms.Padding(2);
             this.textidp.Name = "textidp";
             this.textidp.Size = new System.Drawing.Size(193, 20);
             this.textidp.TabIndex = 4;
@@ -130,7 +132,7 @@
             // textnp
             // 
             this.textnp.Location = new System.Drawing.Point(679, 52);
-            this.textnp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textnp.Margin = new System.Windows.Forms.Padding(2);
             this.textnp.Name = "textnp";
             this.textnp.Size = new System.Drawing.Size(193, 20);
             this.textnp.TabIndex = 5;
@@ -138,7 +140,7 @@
             // textalamat
             // 
             this.textalamat.Location = new System.Drawing.Point(679, 73);
-            this.textalamat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textalamat.Margin = new System.Windows.Forms.Padding(2);
             this.textalamat.Name = "textalamat";
             this.textalamat.Size = new System.Drawing.Size(193, 20);
             this.textalamat.TabIndex = 6;
@@ -146,7 +148,7 @@
             // textNoHp
             // 
             this.textNoHp.Location = new System.Drawing.Point(679, 94);
-            this.textNoHp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textNoHp.Margin = new System.Windows.Forms.Padding(2);
             this.textNoHp.Name = "textNoHp";
             this.textNoHp.Size = new System.Drawing.Size(193, 20);
             this.textNoHp.TabIndex = 7;
@@ -154,7 +156,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(8, 165);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(50, 20);
             this.btnAdd.TabIndex = 8;
@@ -165,7 +167,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(161, 165);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(50, 20);
             this.btnSave.TabIndex = 9;
@@ -176,18 +178,18 @@
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(321, 165);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(50, 20);
             this.btnClear.TabIndex = 10;
-            this.btnClear.Text = "Hapus";
+            this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(503, 165);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 20);
             this.button4.TabIndex = 11;
@@ -207,12 +209,57 @@
             this.idkamarDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.penyewaBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(8, 31);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(545, 101);
             this.dataGridView1.TabIndex = 12;
+            // 
+            // idpenyewaDataGridViewTextBoxColumn
+            // 
+            this.idpenyewaDataGridViewTextBoxColumn.DataPropertyName = "id_penyewa";
+            this.idpenyewaDataGridViewTextBoxColumn.HeaderText = "id_penyewa";
+            this.idpenyewaDataGridViewTextBoxColumn.Name = "idpenyewaDataGridViewTextBoxColumn";
+            // 
+            // namapenyewaDataGridViewTextBoxColumn
+            // 
+            this.namapenyewaDataGridViewTextBoxColumn.DataPropertyName = "nama_penyewa";
+            this.namapenyewaDataGridViewTextBoxColumn.HeaderText = "nama_penyewa";
+            this.namapenyewaDataGridViewTextBoxColumn.Name = "namapenyewaDataGridViewTextBoxColumn";
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            // 
+            // nohpDataGridViewTextBoxColumn
+            // 
+            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            // 
+            // idkamarDataGridViewTextBoxColumn
+            // 
+            this.idkamarDataGridViewTextBoxColumn.DataPropertyName = "id_kamar";
+            this.idkamarDataGridViewTextBoxColumn.HeaderText = "id_kamar";
+            this.idkamarDataGridViewTextBoxColumn.Name = "idkamarDataGridViewTextBoxColumn";
+            // 
+            // penyewaBindingSource1
+            // 
+            this.penyewaBindingSource1.DataMember = "Penyewa";
+            this.penyewaBindingSource1.DataSource = this.kos2DataSetBindingSource;
+            // 
+            // kos2DataSetBindingSource
+            // 
+            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
+            this.kos2DataSetBindingSource.Position = 0;
+            // 
+            // kos2DataSet
+            // 
+            this.kos2DataSet.DataSetName = "Kos2DataSet";
+            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // penyewaBindingSource
             // 
@@ -348,7 +395,7 @@
             // 
             this.cbxKamar.FormattingEnabled = true;
             this.cbxKamar.Location = new System.Drawing.Point(679, 114);
-            this.cbxKamar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxKamar.Margin = new System.Windows.Forms.Padding(2);
             this.cbxKamar.Name = "cbxKamar";
             this.cbxKamar.Size = new System.Drawing.Size(193, 21);
             this.cbxKamar.TabIndex = 14;
@@ -363,60 +410,37 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Kamar";
             // 
-            // kos2DataSet
-            // 
-            this.kos2DataSet.DataSetName = "Kos2DataSet";
-            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kos2DataSetBindingSource
-            // 
-            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
-            this.kos2DataSetBindingSource.Position = 0;
-            // 
-            // penyewaBindingSource1
-            // 
-            this.penyewaBindingSource1.DataMember = "Penyewa";
-            this.penyewaBindingSource1.DataSource = this.kos2DataSetBindingSource;
-            // 
             // penyewaTableAdapter1
             // 
             this.penyewaTableAdapter1.ClearBeforeFill = true;
             // 
-            // idpenyewaDataGridViewTextBoxColumn
+            // btnEdit
             // 
-            this.idpenyewaDataGridViewTextBoxColumn.DataPropertyName = "id_penyewa";
-            this.idpenyewaDataGridViewTextBoxColumn.HeaderText = "id_penyewa";
-            this.idpenyewaDataGridViewTextBoxColumn.Name = "idpenyewaDataGridViewTextBoxColumn";
+            this.btnEdit.Location = new System.Drawing.Point(247, 218);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // namapenyewaDataGridViewTextBoxColumn
+            // btnDelete
             // 
-            this.namapenyewaDataGridViewTextBoxColumn.DataPropertyName = "nama_penyewa";
-            this.namapenyewaDataGridViewTextBoxColumn.HeaderText = "nama_penyewa";
-            this.namapenyewaDataGridViewTextBoxColumn.Name = "namapenyewaDataGridViewTextBoxColumn";
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
-            // 
-            // nohpDataGridViewTextBoxColumn
-            // 
-            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
-            // 
-            // idkamarDataGridViewTextBoxColumn
-            // 
-            this.idkamarDataGridViewTextBoxColumn.DataPropertyName = "id_kamar";
-            this.idkamarDataGridViewTextBoxColumn.HeaderText = "id_kamar";
-            this.idkamarDataGridViewTextBoxColumn.Name = "idkamarDataGridViewTextBoxColumn";
+            this.btnDelete.Location = new System.Drawing.Point(468, 218);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 17;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FormPenyewa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(885, 392);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbxKamar);
             this.Controls.Add(this.bnpenyewa);
@@ -433,19 +457,19 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPenyewa";
             this.Text = "Penyewa";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.penyewaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.penyewaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnpenyewa)).EndInit();
             this.bnpenyewa.ResumeLayout(false);
             this.bnpenyewa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.penyewaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,5 +516,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nohpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idkamarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

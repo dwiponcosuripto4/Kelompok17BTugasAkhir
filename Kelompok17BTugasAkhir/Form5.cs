@@ -66,20 +66,41 @@ namespace Kelompok17BTugasAkhir
             }
             dr.Close();
 
-            string str = "insert into dbo.Penyewa (id_penyewa, nama_penyewa, alamat, no_hp, id_kamar)" + "values(@idp, @np, @Al, @nohp, @kmr)";
-            SqlCommand cmd = new SqlCommand(str, koneksi);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add(new SqlParameter("idp", idp));
-            cmd.Parameters.Add(new SqlParameter("np", np));
-            cmd.Parameters.Add(new SqlParameter("Al", alamat));
-            cmd.Parameters.Add(new SqlParameter("nohp", NoHp));
-            cmd.Parameters.Add(new SqlParameter("kmr", hs));
-            cmd.ExecuteNonQuery();
+            // Check if the ID (idt) already exists in the database
+            string checkIdQuery = "SELECT COUNT(*) FROM dbo.Penyewa WHERE id_penyewa = @Idp";
+            SqlCommand checkIdCmd = new SqlCommand(checkIdQuery, koneksi);
+            checkIdCmd.Parameters.AddWithValue("@Idp", idp);
+            int count = (int)checkIdCmd.ExecuteScalar();
 
+            if (count > 0)
+            {
+                // If the ID exists, update the existing record
+                string updateQuery = "UPDATE dbo.Penyewa SET id_kamar = @Idk, nama_penyewa = @Nmp, alamat = @Al, no_hp = @Hp WHERE id_penyewa = @Idp";
+                SqlCommand updateCmd = new SqlCommand(updateQuery, koneksi);
+                updateCmd.Parameters.AddWithValue("@Idp", idp);
+                updateCmd.Parameters.AddWithValue("@Nmp", np);
+                updateCmd.Parameters.AddWithValue("@Al", alamat);
+                updateCmd.Parameters.AddWithValue("@Hp", NoHp);
+                updateCmd.Parameters.AddWithValue("@Idk", hs);
+                updateCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Diupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // If the ID does not exist, insert a new record
+                string insertQuery = "INSERT INTO dbo.Penyewa (id_penyewa, nama_penyewa, alamat, no_hp, id_kamar) VALUES (@Idp, @Nmp, @Al, @Hp, @Idk)";
+                SqlCommand insertCmd = new SqlCommand(insertQuery, koneksi);
+                insertCmd.Parameters.AddWithValue("@Idp", idp);
+                insertCmd.Parameters.AddWithValue("@Nmp", np);
+                insertCmd.Parameters.AddWithValue("@Al", alamat);
+                insertCmd.Parameters.AddWithValue("@Hp", NoHp);
+                insertCmd.Parameters.AddWithValue("@Idk", hs);
+                insertCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             koneksi.Close();
-
-            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             refreshform();
         }
 
@@ -100,6 +121,42 @@ namespace Kelompok17BTugasAkhir
             // TODO: This line of code loads data into the 'kosDataSet.Penyewa' table. You can move, or remove it, as needed.
             this.penyewaTableAdapter.Fill(this.kosDataSet.Penyewa);
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Aktifkan mode editing
+            textnp.Enabled = true;
+            textalamat.Enabled = true;
+            textNoHp.Enabled = true;
+            cbxKamar.Enabled = true;
+
+            // Nonaktifkan tombol-tombol lainnya selain Save
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Get the selected id_penyewa from the textidp TextBox
+                string selectedId = textidp.Text;
+
+                // Perform the delete
+                koneksi.Open();
+                string str = "DELETE FROM dbo.Penyewa WHERE id_penyewa = @SelectedId";
+                SqlCommand cmd = new SqlCommand(str, koneksi);
+                cmd.Parameters.Add(new SqlParameter("@SelectedId", selectedId));
+                cmd.ExecuteNonQuery();
+                koneksi.Close();
+
+                MessageBox.Show("Data Berhasil Dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                refreshform();
+            }
         }
 
         private void FormPenyewa_Load()

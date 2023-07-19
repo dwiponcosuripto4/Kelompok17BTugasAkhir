@@ -40,6 +40,9 @@
             this.txtHargaSewa = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.kamarBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
             this.kamarBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.kosDataSet1 = new Kelompok17BTugasAkhir.KosDataSet1();
             this.kamarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -69,16 +72,22 @@
             this.kosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kamarBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.kamarTableAdapter1 = new Kelompok17BTugasAkhir.KosDataSet1TableAdapters.KamarTableAdapter();
-            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
-            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kamarBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.kamarTableAdapter2 = new Kelompok17BTugasAkhir.Kos2DataSetTableAdapters.KamarTableAdapter();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.kos2fix = new Kelompok17BTugasAkhir.Kos2fix();
+            this.kos2fixBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kamarBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.kamarTableAdapter3 = new Kelompok17BTugasAkhir.Kos2fixTableAdapters.KamarTableAdapter();
             this.idkamarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idkosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fasilitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource1)).BeginInit();
@@ -90,9 +99,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fix)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource6)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -178,13 +187,28 @@
             this.fasilitasDataGridViewTextBoxColumn,
             this.hargaDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.kamarBindingSource5;
+            this.dataGridView1.DataSource = this.kamarBindingSource6;
             this.dataGridView1.Location = new System.Drawing.Point(9, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(545, 148);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // kamarBindingSource5
+            // 
+            this.kamarBindingSource5.DataMember = "Kamar";
+            this.kamarBindingSource5.DataSource = this.kos2DataSetBindingSource;
+            // 
+            // kos2DataSetBindingSource
+            // 
+            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
+            this.kos2DataSetBindingSource.Position = 0;
+            // 
+            // kos2DataSet
+            // 
+            this.kos2DataSet.DataSetName = "Kos2DataSet";
+            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kamarBindingSource4
             // 
@@ -237,7 +261,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Hapus";
+            this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -408,24 +432,48 @@
             // 
             this.kamarTableAdapter1.ClearBeforeFill = true;
             // 
-            // kos2DataSet
-            // 
-            this.kos2DataSet.DataSetName = "Kos2DataSet";
-            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kos2DataSetBindingSource
-            // 
-            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
-            this.kos2DataSetBindingSource.Position = 0;
-            // 
-            // kamarBindingSource5
-            // 
-            this.kamarBindingSource5.DataMember = "Kamar";
-            this.kamarBindingSource5.DataSource = this.kos2DataSetBindingSource;
-            // 
             // kamarTableAdapter2
             // 
             this.kamarTableAdapter2.ClearBeforeFill = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(191, 282);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(382, 282);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // kos2fix
+            // 
+            this.kos2fix.DataSetName = "Kos2fix";
+            this.kos2fix.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kos2fixBindingSource
+            // 
+            this.kos2fixBindingSource.DataSource = this.kos2fix;
+            this.kos2fixBindingSource.Position = 0;
+            // 
+            // kamarBindingSource6
+            // 
+            this.kamarBindingSource6.DataMember = "Kamar";
+            this.kamarBindingSource6.DataSource = this.kos2fixBindingSource;
+            // 
+            // kamarTableAdapter3
+            // 
+            this.kamarTableAdapter3.ClearBeforeFill = true;
             // 
             // idkamarDataGridViewTextBoxColumn
             // 
@@ -462,6 +510,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 450);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.cbxKos);
             this.Controls.Add(this.bnKamar);
             this.Controls.Add(this.button4);
@@ -482,6 +532,9 @@
             this.Text = "Kamar";
             this.Load += new System.EventHandler(this.FormKamar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource1)).EndInit();
@@ -494,9 +547,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fix)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,6 +600,12 @@
         private Kos2DataSet kos2DataSet;
         private System.Windows.Forms.BindingSource kamarBindingSource5;
         private Kos2DataSetTableAdapters.KamarTableAdapter kamarTableAdapter2;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private Kos2fix kos2fix;
+        private System.Windows.Forms.BindingSource kos2fixBindingSource;
+        private System.Windows.Forms.BindingSource kamarBindingSource6;
+        private Kos2fixTableAdapters.KamarTableAdapter kamarTableAdapter3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idkamarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idkosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fasilitasDataGridViewTextBoxColumn;

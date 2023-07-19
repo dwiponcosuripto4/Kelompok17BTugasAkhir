@@ -103,6 +103,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Kos2DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Kos2fix.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kos2fix.xsd</DependentUpon>
+    </Compile>
     <Compile Include="KosDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +192,17 @@
     </None>
     <None Include="Kos2DataSet2.xss">
       <DependentUpon>Kos2DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Kos2fix.xsc">
+      <DependentUpon>Kos2fix.xsd</DependentUpon>
+    </None>
+    <None Include="Kos2fix.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Kos2fix.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Kos2fix.xss">
+      <DependentUpon>Kos2fix.xsd</DependentUpon>
     </None>
     <None Include="KosDataSet.xsc">
       <DependentUpon>KosDataSet.xsd</DependentUpon>

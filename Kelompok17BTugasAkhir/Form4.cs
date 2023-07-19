@@ -15,11 +15,14 @@ namespace Kelompok17BTugasAkhir
     {
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos2;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
-        private string idkmr, idkk, fasilitas, hrga, sts;
+        private string idkmr, idkk, fasilitas, sts;
+        private decimal hrga;
         BindingSource customerBindingSource = new BindingSource();
 
         private void FormKamar_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kos2fix.Kamar' table. You can move, or remove it, as needed.
+            this.kamarTableAdapter3.Fill(this.kos2fix.Kamar);
             // TODO: This line of code loads data into the 'kos2DataSet.Kamar' table. You can move, or remove it, as needed.
             this.kamarTableAdapter2.Fill(this.kos2DataSet.Kamar);
             // TODO: This line of code loads data into the 'kosDataSet1.Kamar' table. You can move, or remove it, as needed.
@@ -69,9 +72,10 @@ namespace Kelompok17BTugasAkhir
         {
             idkmr = txtIdKamar.Text;
             fasilitas = txtFasilitas.Text;
-            hrga = txtHargaSewa.Text;
+            hrga = decimal.Parse(txtHargaSewa.Text);
             sts = txtStatus.Text;
             idkk = cbxKos.Text;
+
             string hs = string.Empty;
             koneksi.Open();
             string strs = "select id_kos from dbo.Kos where nama_kos = @dd";
@@ -84,20 +88,43 @@ namespace Kelompok17BTugasAkhir
                 hs = dr["id_kos"].ToString();
             }
             dr.Close();
-            string str = "insert into dbo.Kamar (id_kamar, fasilitas, harga, status, id_kos)" + "values(@idkmr, @Fa, @Hrg, @Status, @Idkk)";
-            SqlCommand cmd = new SqlCommand(str, koneksi);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add(new SqlParameter("idkmr", idkmr));
-            cmd.Parameters.Add(new SqlParameter("Fa", fasilitas));
-            cmd.Parameters.Add(new SqlParameter("Hrg", hrga));
-            cmd.Parameters.Add(new SqlParameter("Status", sts));
-            cmd.Parameters.Add(new SqlParameter("Idkk", hs));
-            cmd.ExecuteNonQuery();
+
+            // Check if the ID (idkmr) already exists in the database
+            string checkIdQuery = "SELECT COUNT(*) FROM dbo.Kamar WHERE id_kamar = @Idkmr";
+            SqlCommand checkIdCmd = new SqlCommand(checkIdQuery, koneksi);
+            checkIdCmd.Parameters.AddWithValue("@Idkmr", idkmr);
+            int count = (int)checkIdCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                // If the ID exists, update the existing record
+                string updateQuery = "UPDATE dbo.Kamar SET fasilitas = @Fa, harga = @Hrg, status = @Status, id_kos = @Idkk WHERE id_kamar = @Idkmr";
+                SqlCommand updateCmd = new SqlCommand(updateQuery, koneksi);
+                updateCmd.Parameters.AddWithValue("@Idkmr", idkmr);
+                updateCmd.Parameters.AddWithValue("@Fa", fasilitas);
+                updateCmd.Parameters.AddWithValue("@Hrg", hrga);
+                updateCmd.Parameters.AddWithValue("@Status", sts);
+                updateCmd.Parameters.AddWithValue("@Idkk", hs);
+                updateCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Diupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // If the ID does not exist, insert the new record
+                string insertQuery = "INSERT INTO dbo.Kamar (id_kamar, fasilitas, harga, status, id_kos) VALUES (@Idkmr, @Fa, @Hrg, @Status, @Idkk)";
+                SqlCommand insertCmd = new SqlCommand(insertQuery, koneksi);
+                insertCmd.Parameters.AddWithValue("@Idkmr", idkmr);
+                insertCmd.Parameters.AddWithValue("@Fa", fasilitas);
+                insertCmd.Parameters.AddWithValue("@Hrg", hrga);
+                insertCmd.Parameters.AddWithValue("@Status", sts);
+                insertCmd.Parameters.AddWithValue("@Idkk", hs);
+                insertCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
             koneksi.Close();
-
-            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             refreshform();
         }
 
@@ -127,6 +154,42 @@ namespace Kelompok17BTugasAkhir
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Aktifkan mode editing
+            txtFasilitas.Enabled = true;
+            txtHargaSewa.Enabled = true;
+            txtStatus.Enabled = true;
+            cbxKos.Enabled = true;
+
+            // Nonaktifkan tombol-tombol lainnya selain Save
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Get the selected id_transaksi from the textidt TextBox
+                string selectedId = txtIdKamar.Text;
+
+                // Perform the delete
+                koneksi.Open();
+                string str = "DELETE FROM dbo.Kamar WHERE id_kamar = @SelectedId";
+                SqlCommand cmd = new SqlCommand(str, koneksi);
+                cmd.Parameters.Add(new SqlParameter("@SelectedId", selectedId));
+                cmd.ExecuteNonQuery();
+                koneksi.Close();
+
+                MessageBox.Show("Data Berhasil Dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                refreshform();
+            }
         }
 
         private void Koscbx()

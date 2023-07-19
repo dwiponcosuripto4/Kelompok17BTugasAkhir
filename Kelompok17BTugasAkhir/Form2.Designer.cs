@@ -43,6 +43,13 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namapemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pemilikBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
             this.pemilikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
             this.bnPemilik = new System.Windows.Forms.BindingNavigator(this.components);
@@ -58,22 +65,17 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.pemilikTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.PemilikTableAdapter();
-            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
-            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pemilikBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pemilikTableAdapter1 = new Kelompok17BTugasAkhir.Kos2DataSetTableAdapters.PemilikTableAdapter();
-            this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namapemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnPemilik)).BeginInit();
             this.bnPemilik.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,7 +168,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 10;
-            this.btnClear.Text = "Hapus";
+            this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -195,6 +197,45 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(443, 130);
             this.dataGridView1.TabIndex = 12;
+            // 
+            // idpemilikDataGridViewTextBoxColumn
+            // 
+            this.idpemilikDataGridViewTextBoxColumn.DataPropertyName = "id_pemilik";
+            this.idpemilikDataGridViewTextBoxColumn.HeaderText = "id_pemilik";
+            this.idpemilikDataGridViewTextBoxColumn.Name = "idpemilikDataGridViewTextBoxColumn";
+            // 
+            // namapemilikDataGridViewTextBoxColumn
+            // 
+            this.namapemilikDataGridViewTextBoxColumn.DataPropertyName = "nama_pemilik";
+            this.namapemilikDataGridViewTextBoxColumn.HeaderText = "nama_pemilik";
+            this.namapemilikDataGridViewTextBoxColumn.Name = "namapemilikDataGridViewTextBoxColumn";
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            // 
+            // nohpDataGridViewTextBoxColumn
+            // 
+            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            // 
+            // pemilikBindingSource1
+            // 
+            this.pemilikBindingSource1.DataMember = "Pemilik";
+            this.pemilikBindingSource1.DataSource = this.kos2DataSetBindingSource;
+            // 
+            // kos2DataSetBindingSource
+            // 
+            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
+            this.kos2DataSetBindingSource.Position = 0;
+            // 
+            // kos2DataSet
+            // 
+            this.kos2DataSet.DataSetName = "Kos2DataSet";
+            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pemilikBindingSource
             // 
@@ -327,54 +368,37 @@
             // 
             this.pemilikTableAdapter.ClearBeforeFill = true;
             // 
-            // kos2DataSet
-            // 
-            this.kos2DataSet.DataSetName = "Kos2DataSet";
-            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kos2DataSetBindingSource
-            // 
-            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
-            this.kos2DataSetBindingSource.Position = 0;
-            // 
-            // pemilikBindingSource1
-            // 
-            this.pemilikBindingSource1.DataMember = "Pemilik";
-            this.pemilikBindingSource1.DataSource = this.kos2DataSetBindingSource;
-            // 
             // pemilikTableAdapter1
             // 
             this.pemilikTableAdapter1.ClearBeforeFill = true;
             // 
-            // idpemilikDataGridViewTextBoxColumn
+            // btnEdit
             // 
-            this.idpemilikDataGridViewTextBoxColumn.DataPropertyName = "id_pemilik";
-            this.idpemilikDataGridViewTextBoxColumn.HeaderText = "id_pemilik";
-            this.idpemilikDataGridViewTextBoxColumn.Name = "idpemilikDataGridViewTextBoxColumn";
+            this.btnEdit.Location = new System.Drawing.Point(530, 194);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 14;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // namapemilikDataGridViewTextBoxColumn
+            // btnDelete
             // 
-            this.namapemilikDataGridViewTextBoxColumn.DataPropertyName = "nama_pemilik";
-            this.namapemilikDataGridViewTextBoxColumn.HeaderText = "nama_pemilik";
-            this.namapemilikDataGridViewTextBoxColumn.Name = "namapemilikDataGridViewTextBoxColumn";
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
-            // 
-            // nohpDataGridViewTextBoxColumn
-            // 
-            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            this.btnDelete.Location = new System.Drawing.Point(532, 242);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 15;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FormPemilikKos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 298);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.bnPemilik);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
@@ -393,14 +417,14 @@
             this.Text = "PemilikKos";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnPemilik)).EndInit();
             this.bnPemilik.ResumeLayout(false);
             this.bnPemilik.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pemilikBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +468,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn namapemilikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nohpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

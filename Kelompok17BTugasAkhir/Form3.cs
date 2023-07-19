@@ -15,7 +15,8 @@ namespace Kelompok17BTugasAkhir
     {
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos2;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
-        private string idkk, namakos, alamat, nohp, kapsk, hs, pemilik;
+        private string idkk, namakos, alamat, nohp, kapsk, pemilik;
+        private decimal hs;
         BindingSource customerBindingSource = new BindingSource();
         public KosKosan()
         {
@@ -70,35 +71,61 @@ namespace Kelompok17BTugasAkhir
             alamat = textAlamat.Text;
             nohp = textNoHp.Text;
             kapsk = textKK.Text;
-            hs = textHS.Text;
-            string pm = string.Empty;   
+            hs = decimal.Parse(textHS.Text);
+
+            string pm = string.Empty;
             koneksi.Open();
             string strs = "select id_pemilik from dbo.Pemilik where nama_pemilik = @dd";
             SqlCommand cm = new SqlCommand(strs, koneksi);
             cm.CommandType = CommandType.Text;
             cm.Parameters.Add(new SqlParameter("@dd", pemilik));
             SqlDataReader dr = cm.ExecuteReader();
-            while (dr.Read()) 
+            while (dr.Read())
             {
                 pm = dr["id_pemilik"].ToString();
             }
             dr.Close();
-            string str = "insert into dbo.Kos (id_kos, id_pemilik, nama_kos, alamat, no_hp, kapasitas, harga)" + "values(@idk, @Pm, @nk, @Al, @nohp, @kaps, @hrs)";
-            SqlCommand cmd = new SqlCommand(str, koneksi);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add(new SqlParameter("idk", idkk));
-            cmd.Parameters.Add(new SqlParameter("Pm", pm));
-            cmd.Parameters.Add(new SqlParameter("nk", namakos));
-            cmd.Parameters.Add(new SqlParameter("Al", alamat));
-            cmd.Parameters.Add(new SqlParameter("nohp", nohp));
-            cmd.Parameters.Add(new SqlParameter("kaps", kapsk));
-            cmd.Parameters.Add(new SqlParameter("hrs", hs));
-            cmd.ExecuteNonQuery();
+
+            // Check if the ID (idkk) already exists in the database
+            string checkIdQuery = "SELECT COUNT(*) FROM dbo.Kos WHERE id_kos = @Idkk";
+            SqlCommand checkIdCmd = new SqlCommand(checkIdQuery, koneksi);
+            checkIdCmd.Parameters.AddWithValue("@Idkk", idkk);
+            int count = (int)checkIdCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                // If the ID exists, update the existing record
+                string updateQuery = "UPDATE dbo.Kos SET id_pemilik = @Pm, nama_kos = @nk, alamat = @Al, no_hp = @nohp, kapasitas = @kaps, harga = @hrs WHERE id_kos = @Idkk";
+                SqlCommand updateCmd = new SqlCommand(updateQuery, koneksi);
+                updateCmd.Parameters.AddWithValue("@Idkk", idkk);
+                updateCmd.Parameters.AddWithValue("@Pm", pm);
+                updateCmd.Parameters.AddWithValue("@nk", namakos);
+                updateCmd.Parameters.AddWithValue("@Al", alamat);
+                updateCmd.Parameters.AddWithValue("@nohp", nohp);
+                updateCmd.Parameters.AddWithValue("@kaps", kapsk);
+                updateCmd.Parameters.AddWithValue("@hrs", hs);
+                updateCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Diupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // If the ID does not exist, insert the new record
+                string insertQuery = "INSERT INTO dbo.Kos (id_kos, id_pemilik, nama_kos, alamat, no_hp, kapasitas, harga) VALUES (@Idkk, @Pm, @nk, @Al, @nohp, @kaps, @hrs)";
+                SqlCommand insertCmd = new SqlCommand(insertQuery, koneksi);
+                insertCmd.Parameters.AddWithValue("@Idkk", idkk);
+                insertCmd.Parameters.AddWithValue("@Pm", pm);
+                insertCmd.Parameters.AddWithValue("@nk", namakos);
+                insertCmd.Parameters.AddWithValue("@Al", alamat);
+                insertCmd.Parameters.AddWithValue("@nohp", nohp);
+                insertCmd.Parameters.AddWithValue("@kaps", kapsk);
+                insertCmd.Parameters.AddWithValue("@hrs", hs);
+                insertCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
             koneksi.Close();
-
-            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             refreshform();
         }
 
@@ -110,6 +137,44 @@ namespace Kelompok17BTugasAkhir
         private void btnClear_Click(object sender, EventArgs e)
         {
             refreshform();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Aktifkan mode editing
+            cbxPemilik.Enabled = true;
+            textNK.Enabled = true;
+            textAlamat.Enabled = true;
+            textNoHp.Enabled = true;
+            textKK.Enabled = true;
+            textHS.Enabled = true;
+
+            // Nonaktifkan tombol-tombol lainnya selain Save
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Get the selected id_transaksi from the textidt TextBox
+                string selectedId = textidkk.Text;
+
+                // Perform the delete
+                koneksi.Open();
+                string str = "DELETE FROM dbo.Kos WHERE id_kos = @SelectedId";
+                SqlCommand cmd = new SqlCommand(str, koneksi);
+                cmd.Parameters.Add(new SqlParameter("@SelectedId", selectedId));
+                cmd.ExecuteNonQuery();
+                koneksi.Close();
+
+                MessageBox.Show("Data Berhasil Dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                refreshform();
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)

@@ -83,6 +83,41 @@ namespace Kelompok17BTugasAkhir
 
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Aktifkan mode editing
+            txtNamaPemilik.Enabled = true;
+            txtAlamat.Enabled = true;
+            txtNoHp.Enabled = true;
+
+            // Nonaktifkan tombol-tombol lainnya selain Save
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Get the selected id_admin from the textida TextBox
+                string selectedId = txtIdPemilik.Text;
+
+                // Perform the delete
+                koneksi.Open();
+                string str = "DELETE FROM dbo.Pemilik WHERE id_pemilik = @SelectedId";
+                SqlCommand cmd = new SqlCommand(str, koneksi);
+                cmd.Parameters.Add(new SqlParameter("@SelectedId", selectedId));
+                cmd.ExecuteNonQuery();
+                koneksi.Close();
+
+                MessageBox.Show("Data Berhasil Dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                refreshform();
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             refreshform();
@@ -109,20 +144,43 @@ namespace Kelompok17BTugasAkhir
             namapm = txtNamaPemilik.Text;
             alamat = txtAlamat.Text;
             nohp = txtNoHp.Text;
+
             koneksi.Open();
-            string str = "insert into dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp)" + "values(@idpm, @nmpm, @Al, @nohp)";
-            SqlCommand cmd = new SqlCommand(str, koneksi);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add(new SqlParameter("idpm", idpm));
-            cmd.Parameters.Add(new SqlParameter("nmpm", namapm));
-            cmd.Parameters.Add(new SqlParameter("AL", alamat));
-            cmd.Parameters.Add(new SqlParameter("nohp", nohp));
-            cmd.ExecuteNonQuery();
+
+            // Check if the ID (idpm) already exists in the database
+            string checkIdQuery = "SELECT COUNT(*) FROM dbo.Pemilik WHERE id_pemilik = @Idpm";
+            SqlCommand checkIdCmd = new SqlCommand(checkIdQuery, koneksi);
+            checkIdCmd.Parameters.AddWithValue("@Idpm", idpm);
+            int count = (int)checkIdCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                // If the ID exists, update the existing record
+                string updateQuery = "UPDATE dbo.Pemilik SET nama_pemilik = @nmpm, alamat = @Al, no_hp = @nohp WHERE id_pemilik = @Idpm";
+                SqlCommand updateCmd = new SqlCommand(updateQuery, koneksi);
+                updateCmd.Parameters.AddWithValue("@Idpm", idpm);
+                updateCmd.Parameters.AddWithValue("@nmpm", namapm);
+                updateCmd.Parameters.AddWithValue("@Al", alamat);
+                updateCmd.Parameters.AddWithValue("@nohp", nohp);
+                updateCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Diupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // If the ID does not exist, insert a new record
+                string insertQuery = "INSERT INTO dbo.Pemilik (id_pemilik, nama_pemilik, alamat, no_hp) VALUES (@Idpm, @nmpm, @Al, @nohp)";
+                SqlCommand insertCmd = new SqlCommand(insertQuery, koneksi);
+                insertCmd.Parameters.AddWithValue("@Idpm", idpm);
+                insertCmd.Parameters.AddWithValue("@nmpm", namapm);
+                insertCmd.Parameters.AddWithValue("@Al", alamat);
+                insertCmd.Parameters.AddWithValue("@nohp", nohp);
+                insertCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
             koneksi.Close();
-
-            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             refreshform();
         }
     }

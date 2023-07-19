@@ -15,7 +15,8 @@ namespace Kelompok17BTugasAkhir
     {
         private string stringConnection = "data source=LAPTOP-9OD41I73\\DWIPONCOS;database=Kos2;User ID=sa; Password=xm11tpro";
         private SqlConnection koneksi;
-        private string idt, harga, idpm, idp;
+        private string idt, idpm, idp;
+        private decimal harga;
         private DateTime tm, tk;
         BindingSource customerBindingSource = new BindingSource();
 
@@ -134,15 +135,18 @@ namespace Kelompok17BTugasAkhir
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Retrieve the updated values from input fields
             idt = textidt.Text;
             idpm = cbxIdPemilik.Text;
             idp = cbxIdPenyewa.Text;
-            harga = txtHarga.Text;
+            harga = decimal.Parse(txtHarga.Text);
             tm = dtMasuk.Value;
             tk = dtKeluar.Value;
             string im = string.Empty, ip = string.Empty;
+
+            // Get the corresponding IDs for pemilik and penyewa
             koneksi.Open();
-            string strs = "select id_pemilik from dbo.Pemilik where nama_pemilik = @dd";
+            string strs = "SELECT id_pemilik FROM dbo.Pemilik WHERE nama_pemilik = @dd";
             SqlCommand cm = new SqlCommand(strs, koneksi);
             cm.CommandType = CommandType.Text;
             cm.Parameters.Add(new SqlParameter("@dd", idpm));
@@ -152,6 +156,7 @@ namespace Kelompok17BTugasAkhir
                 im = dr["id_pemilik"].ToString();
             }
             dr.Close();
+
             string strs2 = "SELECT id_penyewa FROM dbo.Penyewa WHERE nama_penyewa = @dd";
             SqlCommand cm2 = new SqlCommand(strs2, koneksi);
             cm2.CommandType = CommandType.Text;
@@ -162,27 +167,88 @@ namespace Kelompok17BTugasAkhir
                 ip = dr2["id_penyewa"].ToString();
             }
             dr2.Close();
-            string str = "insert into dbo.Transaksi (id_transaksi, id_pemilik, id_penyewa, harga, tanggal_masuk, tanggal_keluar)" + "values(@Idt, @Idpm, @Idp, @Hrg, @Tm, @Tk)";
-            SqlCommand cmd = new SqlCommand(str, koneksi);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add(new SqlParameter("Idt", idt));
-            cmd.Parameters.Add(new SqlParameter("Idpm", im));
-            cmd.Parameters.Add(new SqlParameter("Idp", ip));
-            cmd.Parameters.Add(new SqlParameter("Hrg", harga));
-            cmd.Parameters.Add(new SqlParameter("Tm", tm));
-            cmd.Parameters.Add(new SqlParameter("Tk", tk));
-            cmd.ExecuteNonQuery();
+
+            // Check if the ID (idt) already exists in the database
+            string checkIdQuery = "SELECT COUNT(*) FROM dbo.Transaksi WHERE id_transaksi = @Idt";
+            SqlCommand checkIdCmd = new SqlCommand(checkIdQuery, koneksi);
+            checkIdCmd.Parameters.AddWithValue("@Idt", idt);
+            int count = (int)checkIdCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                // If the ID exists, update the existing record
+                string updateQuery = "UPDATE dbo.Transaksi SET id_pemilik = @Idpm, id_penyewa = @Idp, harga = @Hrg, tanggal_masuk = @Tm, tanggal_keluar = @Tk WHERE id_transaksi = @Idt";
+                SqlCommand updateCmd = new SqlCommand(updateQuery, koneksi);
+                updateCmd.Parameters.AddWithValue("@Idt", idt);
+                updateCmd.Parameters.AddWithValue("@Idpm", im);
+                updateCmd.Parameters.AddWithValue("@Idp", ip);
+                updateCmd.Parameters.AddWithValue("@Hrg", harga);
+                updateCmd.Parameters.AddWithValue("@Tm", tm);
+                updateCmd.Parameters.AddWithValue("@Tk", tk);
+                updateCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Diupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // If the ID does not exist, insert a new record
+                string insertQuery = "INSERT INTO dbo.Transaksi (id_transaksi, id_pemilik, id_penyewa, harga, tanggal_masuk, tanggal_keluar) VALUES (@Idt, @Idpm, @Idp, @Hrg, @Tm, @Tk)";
+                SqlCommand insertCmd = new SqlCommand(insertQuery, koneksi);
+                insertCmd.Parameters.AddWithValue("@Idt", idt);
+                insertCmd.Parameters.AddWithValue("@Idpm", im);
+                insertCmd.Parameters.AddWithValue("@Idp", ip);
+                insertCmd.Parameters.AddWithValue("@Hrg", harga);
+                insertCmd.Parameters.AddWithValue("@Tm", tm);
+                insertCmd.Parameters.AddWithValue("@Tk", tk);
+                insertCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
             koneksi.Close();
-
-            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             refreshform();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Enable input fields for editing
+            cbxIdPemilik.Enabled = true;
+            cbxIdPenyewa.Enabled = true;
+            txtHarga.Enabled = true;
+            dtMasuk.Enabled = true;
+            dtKeluar.Enabled = true;
+
+            // Disable unnecessary buttons
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Get the selected id_transaksi from the textidt TextBox
+                string selectedId = textidt.Text;
+
+                // Perform the delete
+                koneksi.Open();
+                string str = "DELETE FROM dbo.Transaksi WHERE id_transaksi = @SelectedId";
+                SqlCommand cmd = new SqlCommand(str, koneksi);
+                cmd.Parameters.Add(new SqlParameter("@SelectedId", selectedId));
+                cmd.ExecuteNonQuery();
+                koneksi.Close();
+
+                MessageBox.Show("Data Berhasil Dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                refreshform();
+            }
         }
 
         private void clearBinding()
@@ -207,12 +273,8 @@ namespace Kelompok17BTugasAkhir
 
         private void Form7_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'kos2DataSet2.Transaksi' table. You can move, or remove it, as needed.
-            this.transaksiTableAdapter5.Fill(this.kos2DataSet2.Transaksi);
-            // TODO: This line of code loads data into the 'kosDataSet3.Transaksi' table. You can move, or remove it, as needed.
-            this.transaksiTableAdapter2.Fill(this.kosDataSet3.Transaksi);
-            // TODO: This line of code loads data into the 'kosDataSet2.Transaksi' table. You can move, or remove it, as needed.
-            this.transaksiTableAdapter1.Fill(this.kosDataSet2.Transaksi);
+            // TODO: This line of code loads data into the 'kos2fix.Transaksi' table. You can move, or remove it, as needed.
+            this.transaksiTableAdapter6.Fill(this.kos2fix.Transaksi);
 
         }
     }

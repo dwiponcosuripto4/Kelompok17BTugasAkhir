@@ -40,6 +40,14 @@
             this.textuser = new System.Windows.Forms.TextBox();
             this.textpsw = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
             this.adminBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kosDataSet = new Kelompok17BTugasAkhir.KosDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,25 +68,19 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.adminTableAdapter = new Kelompok17BTugasAkhir.KosDataSetTableAdapters.AdminTableAdapter();
-            this.kos2DataSet = new Kelompok17BTugasAkhir.Kos2DataSet();
-            this.kos2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adminBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.adminTableAdapter1 = new Kelompok17BTugasAkhir.Kos2DataSetTableAdapters.AdminTableAdapter();
-            this.idadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nohpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adminBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnadmin)).BeginInit();
             this.bnadmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -107,7 +109,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 2;
-            this.btnClear.Text = "Hapus";
+            this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -172,6 +174,51 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(545, 105);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // idadminDataGridViewTextBoxColumn
+            // 
+            this.idadminDataGridViewTextBoxColumn.DataPropertyName = "id_admin";
+            this.idadminDataGridViewTextBoxColumn.HeaderText = "id_admin";
+            this.idadminDataGridViewTextBoxColumn.Name = "idadminDataGridViewTextBoxColumn";
+            // 
+            // namaadminDataGridViewTextBoxColumn
+            // 
+            this.namaadminDataGridViewTextBoxColumn.DataPropertyName = "nama_admin";
+            this.namaadminDataGridViewTextBoxColumn.HeaderText = "nama_admin";
+            this.namaadminDataGridViewTextBoxColumn.Name = "namaadminDataGridViewTextBoxColumn";
+            // 
+            // nohpDataGridViewTextBoxColumn
+            // 
+            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
+            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // adminBindingSource2
+            // 
+            this.adminBindingSource2.DataMember = "Admin";
+            this.adminBindingSource2.DataSource = this.kos2DataSetBindingSource;
+            // 
+            // kos2DataSetBindingSource
+            // 
+            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
+            this.kos2DataSetBindingSource.Position = 0;
+            // 
+            // kos2DataSet
+            // 
+            this.kos2DataSet.DataSetName = "Kos2DataSet";
+            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // adminBindingSource
             // 
@@ -348,16 +395,6 @@
             // 
             this.adminTableAdapter.ClearBeforeFill = true;
             // 
-            // kos2DataSet
-            // 
-            this.kos2DataSet.DataSetName = "Kos2DataSet";
-            this.kos2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kos2DataSetBindingSource
-            // 
-            this.kos2DataSetBindingSource.DataSource = this.kos2DataSet;
-            this.kos2DataSetBindingSource.Position = 0;
-            // 
             // adminBindingSource1
             // 
             this.adminBindingSource1.DataMember = "Admin";
@@ -367,46 +404,33 @@
             // 
             this.adminTableAdapter1.ClearBeforeFill = true;
             // 
-            // idadminDataGridViewTextBoxColumn
+            // btnEdit
             // 
-            this.idadminDataGridViewTextBoxColumn.DataPropertyName = "id_admin";
-            this.idadminDataGridViewTextBoxColumn.HeaderText = "id_admin";
-            this.idadminDataGridViewTextBoxColumn.Name = "idadminDataGridViewTextBoxColumn";
+            this.btnEdit.Location = new System.Drawing.Point(590, 158);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // namaadminDataGridViewTextBoxColumn
+            // btnDelete
             // 
-            this.namaadminDataGridViewTextBoxColumn.DataPropertyName = "nama_admin";
-            this.namaadminDataGridViewTextBoxColumn.HeaderText = "nama_admin";
-            this.namaadminDataGridViewTextBoxColumn.Name = "namaadminDataGridViewTextBoxColumn";
-            // 
-            // nohpDataGridViewTextBoxColumn
-            // 
-            this.nohpDataGridViewTextBoxColumn.DataPropertyName = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.HeaderText = "no_hp";
-            this.nohpDataGridViewTextBoxColumn.Name = "nohpDataGridViewTextBoxColumn";
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            // 
-            // adminBindingSource2
-            // 
-            this.adminBindingSource2.DataMember = "Admin";
-            this.adminBindingSource2.DataSource = this.kos2DataSetBindingSource;
+            this.btnDelete.Location = new System.Drawing.Point(590, 187);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 245);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.bnadmin);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -427,15 +451,15 @@
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnadmin)).EndInit();
             this.bnadmin.ResumeLayout(false);
             this.bnadmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,5 +507,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource adminBindingSource2;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

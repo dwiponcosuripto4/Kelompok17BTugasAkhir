@@ -55,5 +55,16 @@ namespace Kelompok17BTugasAkhir.Properties {
                 return ((string)(this["Kos2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-9OD41I73\\DWIPONCOS;Initial Catalog=Kos2;User ID=sa;Password=xm" +
+            "11tpro")]
+        public string Kos2ConnectionString1 {
+            get {
+                return ((string)(this["Kos2ConnectionString1"]));
+            }
+        }
     }
 }
