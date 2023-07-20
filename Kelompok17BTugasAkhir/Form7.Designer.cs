@@ -78,6 +78,9 @@
             this.transaksiBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiTableAdapter4 = new Kelompok17BTugasAkhir.Kos2DataSet1TableAdapters.TransaksiTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.transaksiBindingSource13 = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2fixBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kos2fix = new Kelompok17BTugasAkhir.Kos2fix();
             this.transaksiBindingSource12 = new System.Windows.Forms.BindingSource(this.components);
             this.kos2DataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kos2DataSet2 = new Kelompok17BTugasAkhir.Kos2DataSet2();
@@ -88,18 +91,24 @@
             this.transaksiBindingSource10 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiBindingSource11 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiTableAdapter5 = new Kelompok17BTugasAkhir.Kos2DataSet2TableAdapters.TransaksiTableAdapter();
-            this.kos2fix = new Kelompok17BTugasAkhir.Kos2fix();
-            this.kos2fixBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transaksiBindingSource13 = new System.Windows.Forms.BindingSource(this.components);
             this.transaksiTableAdapter6 = new Kelompok17BTugasAkhir.Kos2fixTableAdapters.TransaksiTableAdapter();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.cbxAdmin = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.kos2fixBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.transaksiBindingSource14 = new System.Windows.Forms.BindingSource(this.components);
+            this.kos22 = new Kelompok17BTugasAkhir.kos22();
+            this.kos22BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transaksiBindingSource15 = new System.Windows.Forms.BindingSource(this.components);
+            this.transaksiTableAdapter7 = new Kelompok17BTugasAkhir.kos22TableAdapters.TransaksiTableAdapter();
             this.idtransaksiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idpemilikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idpenyewaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tanggalmasukDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tanggalkeluarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.idadminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bntransaksi)).BeginInit();
             this.bntransaksi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kosDataSet)).BeginInit();
@@ -116,6 +125,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2)).BeginInit();
@@ -125,9 +137,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2fix)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos22BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource15)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -135,7 +149,7 @@
             this.btnAdd.Location = new System.Drawing.Point(20, 205);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(50, 18);
+            this.btnAdd.Size = new System.Drawing.Size(55, 23);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -143,10 +157,10 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(393, 205);
+            this.btnClear.Location = new System.Drawing.Point(371, 205);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(50, 18);
+            this.btnClear.Size = new System.Drawing.Size(72, 23);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -154,10 +168,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(572, 205);
+            this.button4.Location = new System.Drawing.Point(545, 205);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 18);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "exit";
             this.button4.UseVisualStyleBackColor = true;
@@ -166,7 +180,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(627, 36);
+            this.label1.Location = new System.Drawing.Point(793, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
@@ -176,7 +190,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(627, 53);
+            this.label2.Location = new System.Drawing.Point(793, 57);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
@@ -186,7 +200,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(627, 74);
+            this.label3.Location = new System.Drawing.Point(793, 78);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
@@ -196,7 +210,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(627, 139);
+            this.label4.Location = new System.Drawing.Point(793, 143);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
@@ -206,7 +220,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(627, 118);
+            this.label5.Location = new System.Drawing.Point(793, 122);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
@@ -217,7 +231,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(627, 96);
+            this.label6.Location = new System.Drawing.Point(793, 100);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
@@ -226,7 +240,7 @@
             // 
             // textidt
             // 
-            this.textidt.Location = new System.Drawing.Point(707, 32);
+            this.textidt.Location = new System.Drawing.Point(873, 36);
             this.textidt.Margin = new System.Windows.Forms.Padding(2);
             this.textidt.Name = "textidt";
             this.textidt.Size = new System.Drawing.Size(135, 20);
@@ -258,7 +272,7 @@
             this.bntransaksi.Name = "bntransaksi";
             this.bntransaksi.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bntransaksi.PositionItem = this.bindingNavigatorPositionItem;
-            this.bntransaksi.Size = new System.Drawing.Size(913, 31);
+            this.bntransaksi.Size = new System.Drawing.Size(1028, 31);
             this.bntransaksi.TabIndex = 12;
             this.bntransaksi.Text = "bindingNavigator1";
             this.bntransaksi.RefreshItems += new System.EventHandler(this.bntransaksi_RefreshItems);
@@ -352,7 +366,7 @@
             // cbxIdPenyewa
             // 
             this.cbxIdPenyewa.FormattingEnabled = true;
-            this.cbxIdPenyewa.Location = new System.Drawing.Point(707, 74);
+            this.cbxIdPenyewa.Location = new System.Drawing.Point(873, 78);
             this.cbxIdPenyewa.Margin = new System.Windows.Forms.Padding(2);
             this.cbxIdPenyewa.Name = "cbxIdPenyewa";
             this.cbxIdPenyewa.Size = new System.Drawing.Size(135, 21);
@@ -361,7 +375,7 @@
             // cbxIdPemilik
             // 
             this.cbxIdPemilik.FormattingEnabled = true;
-            this.cbxIdPemilik.Location = new System.Drawing.Point(707, 53);
+            this.cbxIdPemilik.Location = new System.Drawing.Point(873, 57);
             this.cbxIdPemilik.Margin = new System.Windows.Forms.Padding(2);
             this.cbxIdPemilik.Name = "cbxIdPemilik";
             this.cbxIdPemilik.Size = new System.Drawing.Size(135, 21);
@@ -369,7 +383,7 @@
             // 
             // dtMasuk
             // 
-            this.dtMasuk.Location = new System.Drawing.Point(707, 118);
+            this.dtMasuk.Location = new System.Drawing.Point(873, 122);
             this.dtMasuk.Margin = new System.Windows.Forms.Padding(2);
             this.dtMasuk.Name = "dtMasuk";
             this.dtMasuk.Size = new System.Drawing.Size(135, 20);
@@ -377,7 +391,7 @@
             // 
             // dtKeluar
             // 
-            this.dtKeluar.Location = new System.Drawing.Point(707, 139);
+            this.dtKeluar.Location = new System.Drawing.Point(873, 143);
             this.dtKeluar.Margin = new System.Windows.Forms.Padding(2);
             this.dtKeluar.Name = "dtKeluar";
             this.dtKeluar.Size = new System.Drawing.Size(135, 20);
@@ -388,7 +402,7 @@
             this.btnSave.Location = new System.Drawing.Point(174, 205);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(50, 18);
+            this.btnSave.Size = new System.Drawing.Size(63, 23);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -396,7 +410,7 @@
             // 
             // txtHarga
             // 
-            this.txtHarga.Location = new System.Drawing.Point(707, 97);
+            this.txtHarga.Location = new System.Drawing.Point(873, 101);
             this.txtHarga.Name = "txtHarga";
             this.txtHarga.Size = new System.Drawing.Size(135, 20);
             this.txtHarga.TabIndex = 20;
@@ -502,12 +516,28 @@
             this.idpenyewaDataGridViewTextBoxColumn,
             this.tanggalmasukDataGridViewTextBoxColumn,
             this.tanggalkeluarDataGridViewTextBoxColumn,
-            this.hargaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.transaksiBindingSource13;
+            this.hargaDataGridViewTextBoxColumn,
+            this.idadminDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.transaksiBindingSource15;
             this.dataGridView1.Location = new System.Drawing.Point(12, 36);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(590, 149);
+            this.dataGridView1.Size = new System.Drawing.Size(742, 149);
             this.dataGridView1.TabIndex = 21;
+            // 
+            // transaksiBindingSource13
+            // 
+            this.transaksiBindingSource13.DataMember = "Transaksi";
+            this.transaksiBindingSource13.DataSource = this.kos2fixBindingSource;
+            // 
+            // kos2fixBindingSource
+            // 
+            this.kos2fixBindingSource.DataSource = this.kos2fix;
+            this.kos2fixBindingSource.Position = 0;
+            // 
+            // kos2fix
+            // 
+            this.kos2fix.DataSetName = "Kos2fix";
+            this.kos2fix.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // transaksiBindingSource12
             // 
@@ -558,24 +588,76 @@
             // 
             this.transaksiTableAdapter5.ClearBeforeFill = true;
             // 
-            // kos2fix
-            // 
-            this.kos2fix.DataSetName = "Kos2fix";
-            this.kos2fix.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kos2fixBindingSource
-            // 
-            this.kos2fixBindingSource.DataSource = this.kos2fix;
-            this.kos2fixBindingSource.Position = 0;
-            // 
-            // transaksiBindingSource13
-            // 
-            this.transaksiBindingSource13.DataMember = "Transaksi";
-            this.transaksiBindingSource13.DataSource = this.kos2fixBindingSource;
-            // 
             // transaksiTableAdapter6
             // 
             this.transaksiTableAdapter6.ClearBeforeFill = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(712, 205);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 22;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(873, 205);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 23;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // cbxAdmin
+            // 
+            this.cbxAdmin.FormattingEnabled = true;
+            this.cbxAdmin.Location = new System.Drawing.Point(873, 167);
+            this.cbxAdmin.Name = "cbxAdmin";
+            this.cbxAdmin.Size = new System.Drawing.Size(135, 21);
+            this.cbxAdmin.TabIndex = 24;
+            this.cbxAdmin.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(796, 167);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "admin";
+            // 
+            // kos2fixBindingSource1
+            // 
+            this.kos2fixBindingSource1.DataSource = this.kos2fix;
+            this.kos2fixBindingSource1.Position = 0;
+            // 
+            // transaksiBindingSource14
+            // 
+            this.transaksiBindingSource14.DataMember = "Transaksi";
+            this.transaksiBindingSource14.DataSource = this.kos2fixBindingSource1;
+            // 
+            // kos22
+            // 
+            this.kos22.DataSetName = "kos22";
+            this.kos22.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kos22BindingSource
+            // 
+            this.kos22BindingSource.DataSource = this.kos22;
+            this.kos22BindingSource.Position = 0;
+            // 
+            // transaksiBindingSource15
+            // 
+            this.transaksiBindingSource15.DataMember = "Transaksi";
+            this.transaksiBindingSource15.DataSource = this.kos22BindingSource;
+            // 
+            // transaksiTableAdapter7
+            // 
+            this.transaksiTableAdapter7.ClearBeforeFill = true;
             // 
             // idtransaksiDataGridViewTextBoxColumn
             // 
@@ -613,31 +695,19 @@
             this.hargaDataGridViewTextBoxColumn.HeaderText = "harga";
             this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
             // 
-            // btnEdit
+            // idadminDataGridViewTextBoxColumn
             // 
-            this.btnEdit.Location = new System.Drawing.Point(264, 234);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 22;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(493, 233);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 23;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.idadminDataGridViewTextBoxColumn.DataPropertyName = "id_admin";
+            this.idadminDataGridViewTextBoxColumn.HeaderText = "id_admin";
+            this.idadminDataGridViewTextBoxColumn.Name = "idadminDataGridViewTextBoxColumn";
             // 
             // FormTransaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 292);
+            this.ClientSize = new System.Drawing.Size(1028, 292);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbxAdmin);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.dataGridView1);
@@ -679,6 +749,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kos2DataSet2)).EndInit();
@@ -688,9 +761,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2fix)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos2fixBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kos22BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource15)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -760,13 +835,22 @@
         private Kos2fix kos2fix;
         private System.Windows.Forms.BindingSource transaksiBindingSource13;
         private Kos2fixTableAdapters.TransaksiTableAdapter transaksiTableAdapter6;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ComboBox cbxAdmin;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource kos2fixBindingSource1;
+        private System.Windows.Forms.BindingSource transaksiBindingSource14;
+        private kos22 kos22;
+        private System.Windows.Forms.BindingSource kos22BindingSource;
+        private System.Windows.Forms.BindingSource transaksiBindingSource15;
+        private kos22TableAdapters.TransaksiTableAdapter transaksiTableAdapter7;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtransaksiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpemilikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpenyewaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalmasukDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalkeluarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idadminDataGridViewTextBoxColumn;
     }
 }

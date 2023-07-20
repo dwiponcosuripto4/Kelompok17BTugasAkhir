@@ -88,6 +88,11 @@
     <Compile Include="Form7.Designer.cs">
       <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
+    <Compile Include="kos22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kos22.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Kos2DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +165,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="kos22.xsc">
+      <DependentUpon>kos22.xsd</DependentUpon>
+    </None>
+    <None Include="kos22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>kos22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="kos22.xss">
+      <DependentUpon>kos22.xsd</DependentUpon>
+    </None>
     <None Include="Kos2DataSet.xsc">
       <DependentUpon>Kos2DataSet.xsd</DependentUpon>
     </None>

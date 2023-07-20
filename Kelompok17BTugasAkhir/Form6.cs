@@ -124,23 +124,7 @@ namespace Kelompok17BTugasAkhir
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                // Get the selected id_admin from the textida TextBox
-                string selectedId = textida.Text;
 
-                // Perform the delete
-                koneksi.Open();
-                string str = "DELETE FROM dbo.Admin WHERE id_admin = @SelectedId";
-                SqlCommand cmd = new SqlCommand(str, koneksi);
-                cmd.Parameters.Add(new SqlParameter("@SelectedId", selectedId));
-                cmd.ExecuteNonQuery();
-                koneksi.Close();
-
-                MessageBox.Show("Data Berhasil Dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                refreshform();
-            }
         }
 
         private void admin_Load()
